@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ruby on Luna&#39;s Blog</title>
+    <link>https://LunaZhuang.github.io/tags/ruby/</link>
+    <description>Recent content in Ruby on Luna&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Fri, 10 Jun 2022 01:04:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ruby 世界裡的符號（Symbol）</title>
+      <link>https://LunaZhuang.github.io/blog/ruby-symbol/</link>
+      <pubDate>Fri, 10 Jun 2022 01:04:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/ruby-symbol/</guid>
+      <description>Ruby 裡的符號＝有名字的物件（值） 與數字１,2,3 一樣都是有固定的值並不能改變
+１就是１，２就是２
+符號 ：name ，就是：name 不是變數不可以改變他的值
+字串 name=”amber”，name 變數指向一個字串，並可以改變字串內容</description>
+    </item>
+    
+  </channel>
+</rss>
