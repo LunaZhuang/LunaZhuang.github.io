@@ -16,7 +16,7 @@
       <description>Ruby 裡的符號＝有名字的物件（值） 與數字１,2,3 一樣都是有固定的值並不能改變
 １就是１，２就是２
 符號 ：name ，就是：name 不是變數不可以改變他的值
-字串 name=”amber”，name 變數指向一個字串，並可以改變字串內容</description>
+字串 name=&amp;quot;amber&amp;quot;，name 變數指向一個字串，並可以改變字串內容</description>
     </item>
     
   </channel>
