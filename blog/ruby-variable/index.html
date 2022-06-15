@@ -5,7 +5,7 @@
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="網頁開發新手的學習歷程">
+  <meta name="description" content="Ruby-Variable學習">
   <meta name="author" content="Luna">
   <meta name="generator" content="Hugo 0.100.2" />
 
@@ -104,130 +104,67 @@
 </header>
 <!-- /navigation -->
 
-
 <section class="section-sm">
   <div class="container">
     <div class="row">
+      <div class="col-lg-9 mx-auto">
+        <h3 class="text-center">Ruby 學習筆記-變數（Variable）</h3>
+        <div class="mb-3 post-meta text-center">
+          <span>By Luna</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>15 June 2022</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          
+        <a href="/categories/ruby%e5%9f%ba%e6%9c%ac%e5%8a%9f"
+          class="text-primary">Ruby基本功</a>
         
-        <div class="col-lg-4">
-  <div class="widgets">
-    
-    <div class="widget">
-      
-      <h4 class="widget-title">About Me</h4>
-      
-      <img src="https://LunaZhuang.github.io/images/author-Luna.jpg" alt=""
-        class="img-fluid author-thumb-sm d-block mx-auto rounded-circle mb-4" style="height: 140px;">
-      
-      <p>我是莊茹瑄，
-目前剛開始學習成為一個合格的網站開發人員，
-希望藉由寫文章來充實自己，
-也留下一些努力的紀錄。</p>
-      <a href="https://LunaZhuang.github.io/about/" class="btn btn-outline-primary">Know More</a>
-      
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Category</h4>
-      <ul class="list-unstyled">
-        <li><a
-            href="/categories/go-language/">Go language</a>
-        </li>
-        <li><a
-            href="/categories/ruby%e5%9f%ba%e6%9c%ac%e5%8a%9f/">Ruby基本功</a>
-        </li>
-      </ul>
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Tag</h4>
-      <ul class="list-inline">
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/game/">Game</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/html/">HTML</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/new/">New</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/photos/">Photos</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/python/">Python</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/ruby/">Ruby</a></li>
-      </ul>
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Social</h4>
-      <ul class="list-inline social-links">
+        </div>
+        <div class="mt-1" style="border-top: 3px solid #dee2e6; height: 1rem;"></div>
+       
+       
         
-        <li class="list-inline-item"><a href="https://github.com/LunaZhuang"><i class="ti-github"></i></a></li>
-        
-        <li class="list-inline-item"><a href="https://www.linkedin.com/in/%E8%8C%B9%E7%91%84-%E8%8E%8A-945a5022a/"><i class="ti-linkedin"></i></a></li>
-        
-      </ul>
-    </div>
+        <div class="content mb-5">
+          <h3 id="變數就像標籤本身沒有型態">變數就像<strong>標籤</strong>本身沒有型態</h3>
+<h4 id="ruby-變數種類">Ruby 變數種類</h4>
+<p><img src="/images/ruby-variable.png" alt=""></p>
+<h3 id="變數指定">變數指定</h3>
+<h4 id="a--a--2-一個等號是指定"><code>a = a + 2</code> 一個等號是指定</h4>
+<p><img src="/images/ruby-variable2.png" alt=""></p>
+<h4 id="也可以寫成這樣">也可以寫成這樣</h4>
+<p><img src="/images/ruby-variable4.png" alt=""></p>
+<h3 id="變數的命名慣例">變數的命名慣例</h3>
+<p><img src="/images/ruby-variable3.png" alt=""></p>
+<h3 id="imageswarningpng在寫程式時需要給變數一個好名字具有清楚與有意義給-xyz-不能使人清楚這段程式碼在寫什麼"><img src="/images/warning.png" alt="">在寫程式時需要給變數一個好名字，具有清楚與有意義(給 x,y,z 不能使人清楚這段程式碼在寫什麼)</h3>
 
-    <div class="widget">
-      <h6 class="widget-title">Contact Me</h6>
-      <ul class="list-unstyled">
-        
-                   
-        <li class="mb-3"><i class="ti-location-pin mr-3 text-primary"></i>Taiwan</li>
-        
-                   
-        <li class="mb-3"><a class="text-dark" href="mailto:ruxuanzhuang@gmail.com"><i
-              class="ti-email mr-3 text-primary"></i>ruxuanzhuang@gmail.com</a>
-        
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-        
-      <div class="col-lg-8 mb-5 mb-lg-0">
-        <div class="row">
-          
-          
-          <div class="col-md-12 mb-4">
-    <article class="card">
-        
-        <img src="https://LunaZhuang.github.io/images/post/post-3.jpg" class="card-img-top" alt="How To Use Checklists To Improve Your UX">
-        
-        <div class="card-body px-0">
-        <a href="https://LunaZhuang.github.io/blog/post-13/" class="h3 d-block my-3">How To Use Checklists To Improve Your UX</a>
-        
-        
-        <div class="mb-3 post-meta">
-            <span>By Luna</span>
-            
-            <span class="border-bottom border-primary px-2 mx-1"></span>
-            <span>2019-10-29</span>
-            
-            <span class="border-bottom border-primary px-2 mx-1"></span>
-            
-        <a href="/categories/go-language"
-            class="text-primary">Go language</a>
-        
         </div>
-        <p class="card-text">this is meta description</p>
-        <a href="https://LunaZhuang.github.io/blog/post-13/" class="btn btn-outline-primary">read more</a>
-        </div>
-    </article>
-</div>
-          
-        </div>
-      </div>
-    
 
-      
-      <div class="col-12 mt-5">
         
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "lunas-blog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
       </div>
     </div>
   </div>
 </section>
-
 
 
 
