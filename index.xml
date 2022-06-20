@@ -8,12 +8,12 @@
     <language>zh-tw</language>
     <lastBuildDate>Wed, 15 Jun 2022 07:04:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Ruby 學習筆記-變數（Variable）</title>
+      <title>Ruby 學習筆記-變數＆常數（Variable）</title>
       <link>https://LunaZhuang.github.io/blog/ruby-variable/</link>
       <pubDate>Wed, 15 Jun 2022 07:04:00 +0800</pubDate>
       
       <guid>https://LunaZhuang.github.io/blog/ruby-variable/</guid>
-      <description>變數就像標籤本身沒有型態 Ruby 變數種類 變數指定 a = a + 2 一個等號是指定 也可以寫成這樣 變數的命名慣例 在寫程式時需要給變數一個好名字，具有清楚與有意義(給 x,y,z 不能使人清楚這段程式碼在寫什麼) </description>
+      <description>1.Ruby 變數種類 2.變數指定 a = a + 2 一個等號是指定 也可以寫成這樣 3.</description>
     </item>
     
     <item>
