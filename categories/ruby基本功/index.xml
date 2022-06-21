@@ -6,7 +6,16 @@
     <description>Recent content in Ruby基本功 on Luna&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 15 Jun 2022 07:04:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/categories/ruby%E5%9F%BA%E6%9C%AC%E5%8A%9F/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Jun 2022 21:30:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/categories/ruby%E5%9F%BA%E6%9C%AC%E5%8A%9F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ruby 學習筆記-字串＆數字（String&amp;Number）</title>
+      <link>https://LunaZhuang.github.io/blog/ruby-stringandnumber/</link>
+      <pubDate>Tue, 21 Jun 2022 21:30:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/ruby-stringandnumber/</guid>
+      <description>1.字串的串接 2.字串引號種類 名稱 引號 範例 雙引號 &amp;quot; &amp;quot; puts &amp;ldquo;Hi&amp;rdquo; 單引號 &amp;rsquo; &#39; puts &amp;lsquo;Hi&amp;rsquo; 跳脫字元 &amp;rsquo; \ &#39; puts &amp;lsquo;Hi, I&#39;m Luna&amp;rsquo; 效果等於雙引號 %Q puts %Q(Hi) 效果等於單引號 %q puts %q(Hi) 3.</description>
+    </item>
+    
     <item>
       <title>Ruby 學習筆記-變數＆常數（Variable）</title>
       <link>https://LunaZhuang.github.io/blog/ruby-variable/</link>

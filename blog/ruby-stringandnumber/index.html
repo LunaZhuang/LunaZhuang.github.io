@@ -5,7 +5,7 @@
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="this is meta description">
+  <meta name="description" content="Ruby-String&amp;Number學習">
   <meta name="author" content="Luna">
   <meta name="generator" content="Hugo 0.100.2" />
 
@@ -104,165 +104,105 @@
 </header>
 <!-- /navigation -->
 
-
 <section class="section-sm">
   <div class="container">
     <div class="row">
+      <div class="col-lg-9 mx-auto">
+        <h3 class="text-center">Ruby 學習筆記-字串＆數字（String&amp;Number）</h3>
+        <div class="mb-3 post-meta text-center">
+          <span>By Luna</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>21 June 2022</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          
+        <a href="/categories/ruby%e5%9f%ba%e6%9c%ac%e5%8a%9f"
+          class="text-primary">Ruby基本功</a>
         
-        <div class="col-lg-4">
-  <div class="widgets">
-    
-    <div class="widget">
-      
-      <h4 class="widget-title">About Me</h4>
-      
-      <img src="https://LunaZhuang.github.io/images/luna-autor01.JPG" alt=""
-        class="img-fluid author-thumb-sm d-block mx-auto rounded-circle mb-4" style="height: 140px;">
-      
-      <p>我是莊茹瑄，
-目前剛開始學習成為一個合格的網站開發人員，
-希望藉由寫文章來充實自己，
-也留下一些努力的紀錄。</p>
-      <a href="https://LunaZhuang.github.io/about/" class="btn btn-outline-primary">Know More</a>
-      
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Category</h4>
-      <ul class="list-unstyled">
-        <li><a
-            href="/categories/ruby%e5%9f%ba%e6%9c%ac%e5%8a%9f/">Ruby基本功</a>
-        </li>
-      </ul>
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Tag</h4>
-      <ul class="list-inline">
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/ruby/">Ruby</a></li>
-      </ul>
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Social</h4>
-      <ul class="list-inline social-links">
+        </div>
+        <div class="mt-1" style="border-top: 3px solid #dee2e6; height: 1rem;"></div>
+       
+       
         
-        <li class="list-inline-item"><a href="https://github.com/LunaZhuang"><i class="ti-github"></i></a></li>
-        
-        <li class="list-inline-item"><a href="https://www.linkedin.com/in/%E8%8C%B9%E7%91%84-%E8%8E%8A-945a5022a/"><i class="ti-linkedin"></i></a></li>
-        
-      </ul>
-    </div>
+        <div class="content mb-5">
+          <h3 id="1字串的串接">1.字串的串接</h3>
+<p><img src="/images/ruby-string.png" alt=""></p>
+<h3 id="2字串引號種類">2.字串引號種類</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名稱</th>
+<th style="text-align:center">引號</th>
+<th style="text-align:right">範例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">雙引號</td>
+<td style="text-align:center">&quot; &quot;</td>
+<td style="text-align:right">puts &ldquo;Hi&rdquo;</td>
+</tr>
+<tr>
+<td style="text-align:left">單引號</td>
+<td style="text-align:center">&rsquo; '</td>
+<td style="text-align:right">puts &lsquo;Hi&rsquo;</td>
+</tr>
+<tr>
+<td style="text-align:left">跳脫字元</td>
+<td style="text-align:center">&rsquo; \ '</td>
+<td style="text-align:right">puts &lsquo;Hi, I'm Luna&rsquo;</td>
+</tr>
+<tr>
+<td style="text-align:left">效果等於雙引號</td>
+<td style="text-align:center">%Q</td>
+<td style="text-align:right">puts %Q(Hi)</td>
+</tr>
+<tr>
+<td style="text-align:left">效果等於單引號</td>
+<td style="text-align:center">%q</td>
+<td style="text-align:right">puts %q(Hi)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3數字-整數與浮點數">3.數字-整數與浮點數</h3>
+<h5 id="puts-355round--轉成整數四捨五入"><code>puts 3.55.round # 轉成整數，四捨五入</code></h5>
+<h5 id="puts-374floor--轉成整數無條件捨去"><code>puts 3.74.floor # 轉成整數，無條件捨去</code></h5>
+<h5 id="puts-314ceil--轉成整數無條件進位"><code>puts 3.14.ceil # 轉成整數，無條件進位</code></h5>
+<h5 id="puts-314to_i--轉成整數無條件捨去"><code>puts 3.14.to_i # 轉成整數，無條件捨去</code></h5>
+<h3 id="4除法">4.除法</h3>
+<h5 id="-puts-103--整數除以整數得到3"><code> puts 10/3 # 整數除以整數得到3</code></h5>
+<h5 id="-puts-1003--333333333"><code> puts 10.0/3 # 3.33333333</code></h5>
+<h5 id="-puts-1030--333333333"><code> puts 10/3.0 # 3.33333333</code></h5>
+<h5 id="-puts-10030--333333333"><code> puts 10.0/3.0 # 3.33333333</code></h5>
 
-    <div class="widget">
-      <h6 class="widget-title">Contact Me</h6>
-      <ul class="list-unstyled">
-        
-                   
-        <li class="mb-3"><i class="ti-location-pin mr-3 text-primary"></i>Taiwan</li>
-        
-                   
-        <li class="mb-3"><a class="text-dark" href="mailto:ruxuanzhuang@gmail.com"><i
-              class="ti-email mr-3 text-primary"></i>ruxuanzhuang@gmail.com</a>
-        
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-        
-      <div class="col-lg-8 mb-5 mb-lg-0">
-        <div class="row">
-          
-          
-          <div class="col-md-12 mb-4">
-    <article class="card">
-        
-        <div class="card-body px-0">
-        <a href="https://LunaZhuang.github.io/blog/ruby-stringandnumber/" class="h3 d-block my-3">Ruby 學習筆記-字串＆數字（String&amp;Number）</a>
-        
-        
-        <div class="mb-3 post-meta">
-            <span>By Luna</span>
-            
-            <span class="border-bottom border-primary px-2 mx-1"></span>
-            <span>2022-06-21</span>
-            
-            <span class="border-bottom border-primary px-2 mx-1"></span>
-            
-        <a href="/categories/ruby%e5%9f%ba%e6%9c%ac%e5%8a%9f"
-            class="text-primary">Ruby基本功</a>
-        
         </div>
-        <p class="card-text">Ruby-String&amp;Number學習</p>
-        <a href="https://LunaZhuang.github.io/blog/ruby-stringandnumber/" class="btn btn-outline-primary">read more</a>
-        </div>
-    </article>
-</div>
-          
-          <div class="col-md-12 mb-4">
-    <article class="card">
-        
-        <div class="card-body px-0">
-        <a href="https://LunaZhuang.github.io/blog/ruby-variable/" class="h3 d-block my-3">Ruby 學習筆記-變數＆常數（Variable）</a>
-        
-        
-        <div class="mb-3 post-meta">
-            <span>By Luna</span>
-            
-            <span class="border-bottom border-primary px-2 mx-1"></span>
-            <span>2022-06-15</span>
-            
-            <span class="border-bottom border-primary px-2 mx-1"></span>
-            
-        <a href="/categories/ruby%e5%9f%ba%e6%9c%ac%e5%8a%9f"
-            class="text-primary">Ruby基本功</a>
-        
-        </div>
-        <p class="card-text">Ruby-Variable學習</p>
-        <a href="https://LunaZhuang.github.io/blog/ruby-variable/" class="btn btn-outline-primary">read more</a>
-        </div>
-    </article>
-</div>
-          
-          <div class="col-md-12 mb-4">
-    <article class="card">
-        
-        <div class="card-body px-0">
-        <a href="https://LunaZhuang.github.io/blog/ruby-symbol/" class="h3 d-block my-3">Ruby 學習筆記-符號（Symbol）</a>
-        
-        
-        <div class="mb-3 post-meta">
-            <span>By Luna</span>
-            
-            <span class="border-bottom border-primary px-2 mx-1"></span>
-            <span>2022-06-10</span>
-            
-            <span class="border-bottom border-primary px-2 mx-1"></span>
-            
-        <a href="/categories/ruby%e5%9f%ba%e6%9c%ac%e5%8a%9f"
-            class="text-primary">Ruby基本功</a>
-        
-        </div>
-        <p class="card-text">Ruby-Symbol學習</p>
-        <a href="https://LunaZhuang.github.io/blog/ruby-symbol/" class="btn btn-outline-primary">read more</a>
-        </div>
-    </article>
-</div>
-          
-        </div>
-      </div>
-    
 
-      
-      <div class="col-12 mt-5">
         
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "lunas-blog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
       </div>
     </div>
   </div>
 </section>
-
 
 
 
