@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTML on Luna&#39;s Blog</title>
+    <link>https://LunaZhuang.github.io/categories/html/</link>
+    <description>Recent content in HTML on Luna&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Wed, 22 Jun 2022 22:40:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/categories/html/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HTML(超文本標記語言) </title>
+      <link>https://LunaZhuang.github.io/blog/html/</link>
+      <pubDate>Wed, 22 Jun 2022 22:40:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/html/</guid>
+      <description>HTML 描述了一個網站的結構語意隨著線索的呈現，使之成為一種標記語言而非程式語言。 寫網頁要清楚你的這個網頁的重點是什麼，才知道你的網頁要用什麼標籤撰寫。HTML 語意最重要，視覺外觀不是重點。 HTML 基本標籤分類 </description>
+    </item>
+    
+  </channel>
+</rss>
