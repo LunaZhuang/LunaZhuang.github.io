@@ -8,6 +8,15 @@
     <language>zh-tw</language>
     <lastBuildDate>Tue, 29 Oct 2019 13:49:23 +0600</lastBuildDate><atom:link href="https://LunaZhuang.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Ruby 學習筆記-邏輯判斷</title>
+      <link>https://LunaZhuang.github.io/blog/ruby-logic/</link>
+      <pubDate>Wed, 22 Jun 2022 22:40:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/ruby-logic/</guid>
+      <description>1.等號判斷 a =10 b = &amp;#34;10&amp;#34; p a == b #false p a === b #false 一個等號是指代的意思，二個等號與三個等號都是比較的意思。</description>
+    </item>
+    
+    <item>
       <title>Ruby 學習筆記-字串＆數字（String&amp;Number）</title>
       <link>https://LunaZhuang.github.io/blog/ruby-stringandnumber/</link>
       <pubDate>Tue, 21 Jun 2022 21:30:00 +0800</pubDate>
