@@ -6,11 +6,11 @@
     <description>Recent content in JavaScript on Luna&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 24 Jun 2022 22:04:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Jun 2022 16:30:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JavaScript-變數與常數</title>
       <link>https://LunaZhuang.github.io/blog/js-variableconstant/</link>
-      <pubDate>Fri, 24 Jun 2022 22:04:00 +0800</pubDate>
+      <pubDate>Sat, 25 Jun 2022 16:30:00 +0800</pubDate>
       
       <guid>https://LunaZhuang.github.io/blog/js-variableconstant/</guid>
       <description>為什麼程式語言都需要變數？ 變數只是個名字，只是為了要識別，讓你程式語言在計算的時候，有個放計算資料內容的容器，當你在執行的時候就可以，依照你給他的容器名稱，把他叫出來使用，變數本身沒意義。
