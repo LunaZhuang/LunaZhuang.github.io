@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>Luna&#39;s Blog</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JavaScript-var、let、const的介紹與差異">
+  <meta name="author" content="Luna">
+  <meta name="generator" content="Hugo 0.100.2" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/venobox/venobox.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/scss/style.min.css" media="screen">
+
+  <!-- Favicon -->
+<link rel="shortcut icon" href="https://LunaZhuang.github.io/images/favicon.png " type="image/x-icon">
+<link rel="icon" href="https://LunaZhuang.github.io/images/favicon.png " type="image/x-icon">
+
+  <!-- google analitycs -->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-231593772-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom ">
+      <a class="navbar-brand " href="https://LunaZhuang.github.io">
+        <img class=""
+          src="https://LunaZhuang.github.io/images/icon.png" alt="Luna&#39;s Blog"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        
+
+        
+
+        <ul class="navbar-nav ml-auto">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://LunaZhuang.github.io/">Home</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://LunaZhuang.github.io/about/">About</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://LunaZhuang.github.io/search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <h3 class="text-center">JavaScript-變數與常數</h3>
+        <div class="mb-3 post-meta text-center">
+          <span>By Luna</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>24 June 2022</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          
+        <a href="/categories/js%e5%85%a5%e9%96%80"
+          class="text-primary">Js入門</a>
+        
+        </div>
+        <div class="mt-1" style="border-top: 3px solid #dee2e6; height: 1rem;"></div>
+       
+       
+        
+        <div class="content mb-5">
+          <h4 id="為什麼程式語言都需要變數">為什麼程式語言都需要變數？</h4>
+<p>變數只是個名字，只是為了要識別，讓你程式語言在計算的時候，有個放計算資料內容的容器，當你在執行的時候就可以，依照你給他的容器名稱，把他叫出來使用，變數本身沒意義。</p>
+<p><img src="/images/js-v&amp;c.png" alt=""></p>
+<h4 id="指定又是什麼">指定又是什麼？</h4>
+<p>在程式語言中=(x 等號)而是指定，由右側的值指定給左側的變數名稱。==則是比較兩邊的值。
+但在 JavaScript 中==雖然也是比較的意思，不過 JavaScript 會有自動轉型的問題，為了不要讓你的程式碼出現奇怪的內容，建議使用更為嚴謹的===。</p>
+<p><img src="/images/js-v&amp;c2.png" alt=""></p>
+<h4 id="變數的命名">變數的命名</h4>
+<ul>
+<li>可以使用英文字母或數字，但第一個字不可以是數字。</li>
+<li>不能使用保留字</li>
+<li>注意英文大小寫有差</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">保留字</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">break</td>
+<td style="text-align:center">case</td>
+<td style="text-align:center">catch</td>
+<td style="text-align:center">class</td>
+<td style="text-align:center">const</td>
+<td style="text-align:center">continue</td>
+<td style="text-align:center">debugger</td>
+</tr>
+<tr>
+<td style="text-align:center">default</td>
+<td style="text-align:center">delete</td>
+<td style="text-align:center">do</td>
+<td style="text-align:center">else</td>
+<td style="text-align:center">export</td>
+<td style="text-align:center">extends</td>
+<td style="text-align:center">finally</td>
+</tr>
+<tr>
+<td style="text-align:center">for</td>
+<td style="text-align:center">function</td>
+<td style="text-align:center">if</td>
+<td style="text-align:center">import</td>
+<td style="text-align:center">in</td>
+<td style="text-align:center">instanceof</td>
+<td style="text-align:center">new</td>
+</tr>
+<tr>
+<td style="text-align:center">return</td>
+<td style="text-align:center">super</td>
+<td style="text-align:center">switch</td>
+<td style="text-align:center">this</td>
+<td style="text-align:center">throw</td>
+<td style="text-align:center">try</td>
+<td style="text-align:center">typeof</td>
+</tr>
+<tr>
+<td style="text-align:center">var</td>
+<td style="text-align:center">void</td>
+<td style="text-align:center">while</td>
+<td style="text-align:center">with</td>
+<td style="text-align:center">yield</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="_imageswarning1png-變數命名需清楚與有意義_"><em><img src="/images/warning1.png" alt=""> 變數命名需清楚與有意義。</em></h5>
+<h4 id="變數名稱慣例">變數名稱慣例</h4>
+<ol>
+<li>CamelCase(JavaScript)</li>
+</ol>
+<p><img src="/images/CamelCase.png" alt=""></p>
+<ol start="2">
+<li>camelCase</li>
+</ol>
+<p><img src="/images/camelCase2.png" alt=""></p>
+<ol start="3">
+<li>snake_case(Ruby)</li>
+</ol>
+<p><img src="/images/snake_case.png" alt=""></p>
+<h5 id="_imageswarning1png-變數有沒有宣告有差嗎_-有宣告叫變數沒宣告叫指定"><em><img src="/images/warning1.png" alt=""> 變數有沒有宣告有差嗎？</em> 有宣告叫變數，沒宣告叫指定。</h5>
+<h4 id="變數-未定義undefined-vs-沒有定義not-define">變數 未定義(undefined) VS 沒有定義(not define)</h4>
+<p><img src="/images/js-v&amp;c4.png" alt=""></p>
+<h4 id="變數提昇variable-hoisting與暫時性死區">變數提昇(variable hoisting)與暫時性死區</h4>
+<p>JavaScript 在瀏覽器執行時會有兩個階段，一個叫建立期(creation phases)另一個是執行期(execution phases)。<a href="https://www.javascripttutorial.net/javascript-execution-context">官網上的說明</a></p>
+<ol>
+<li>
+<p>建立期 JavaScript 會先將你宣告的變數儲存，再給他一個初始化的值 undefined。</p>
+</li>
+<li>
+<p>執行期再按照程式碼逐行執行代碼，將值分配給變量，並執行函數調用。</p>
+</li>
+</ol>
+<p><img src="/images/js-v&amp;c5.png" alt="">
+<img src="/images/js-v&amp;c6.png" alt=""></p>
+<p>ES6 後為了要修正 JavaScript 這個問題新增了 let 變數與 const 常數，在 let 與 const 上第一張圖執行結果與 var 變數是相同的，差別在與第二張圖，let 與 const 多了一個叫 TDZ(暫時死區)，執行後的結果會有所差異，請看下圖。
+<img src="/images/js-v&amp;c8.png" alt="">
+<img src="/images/js-v&amp;c7.png" alt=""></p>
+<h4 id="範圍鏈scope-chain">範圍鏈(Scope chain)</h4>
+<p><img src="/images/js-v&amp;c9.png" alt=""></p>
+<p>從上圖可知在 function 裡的 var 變數不會影響到外部程式，可在 if 身上會影響到外面的 console.log(a)，代表 var 是 <strong>function scope</strong>。</p>
+<p>同理從上圖可知 function 裡的 let 變數不會影響到外部程式，在 if 身上也不會影響到外面的 console.log(a)，代表 let 是 <strong>block scope{}</strong>。</p>
+<h4 id="letconstvar-怎麼選擇">let,const,var 怎麼選擇？</h4>
+<ul>
+<li>能用 const 就用 const，不能用 const 就改用 let</li>
+<li>var 也可以用，只是它的範圍(Scope)比較大一些</li>
+<li>千萬不要沒宣告就拿來用，那會造成全域物件的污染</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">var</th>
+<th style="text-align:center">let/const</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Scope</strong></td>
+<td style="text-align:center">function scope</td>
+<td style="text-align:center">block scope{}</td>
+</tr>
+<tr>
+<td><strong>重複宣告</strong></td>
+<td style="text-align:center">可</td>
+<td style="text-align:center">不可</td>
+</tr>
+<tr>
+<td><strong>可能會造成全域屬性</strong></td>
+<td style="text-align:center">會</td>
+<td style="text-align:center">不會</td>
+</tr>
+<tr>
+<td><strong>變數提昇</strong></td>
+<td style="text-align:center">有</td>
+<td style="text-align:center">有(被 TDZ 罩住)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="javascript-2-種型別">JavaScript 2 種型別</h4>
+<ol>
+<li>原始型別
+<ol>
+<li>數字 (Number)</li>
+<li>字串 (String)</li>
+<li>真假值 (Boolean)</li>
+<li>空值 (Null)</li>
+<li>未定義 (Undefined)</li>
+<li>符號 (Symbol)</li>
+</ol>
+</li>
+<li>物件型別
+<ol>
+<li>陣列(Array)</li>
+<li>函數(Function)</li>
+<li>物件(Object)</li>
+</ol>
+</li>
+</ol>
+<h5 id="對-javascript-來說false0undefindnull-都是假的其餘為真">對 JavaScript 來說，false,0,&quot;&quot;,undefind,null 都是假的，其餘為真。</h5>
+
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "lunas-blog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<script>
+  var indexURL = "https://LunaZhuang.github.io/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://LunaZhuang.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/search/mark.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://LunaZhuang.github.io/js/script.min.js"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+</body>
+</html>

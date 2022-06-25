@@ -8,6 +8,16 @@
     <language>zh-tw</language>
     <lastBuildDate>Tue, 29 Oct 2019 13:49:23 +0600</lastBuildDate><atom:link href="https://LunaZhuang.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>JavaScript-變數與常數</title>
+      <link>https://LunaZhuang.github.io/blog/js-variableconstant/</link>
+      <pubDate>Fri, 24 Jun 2022 22:04:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/js-variableconstant/</guid>
+      <description>為什麼程式語言都需要變數？ 變數只是個名字，只是為了要識別，讓你程式語言在計算的時候，有個放計算資料內容的容器，當你在執行的時候就可以，依照你給他的容器名稱，把他叫出來使用，變數本身沒意義。
+指定又是什麼？ 在程式語言中=(x 等號)而是指定，由右側的值指定給左側的變數名稱。==則是比較兩邊的值。 但在 JavaScript 中==雖然也是比較的意思，不過 JavaScript 會有自動轉型的問題，為了不要讓你的程式碼出現奇怪的內容，建議使用更為嚴謹的===。</description>
+    </item>
+    
+    <item>
       <title>HTML(超文本標記語言) </title>
       <link>https://LunaZhuang.github.io/blog/html/</link>
       <pubDate>Wed, 22 Jun 2022 23:48:00 +0800</pubDate>
