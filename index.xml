@@ -23,7 +23,8 @@
       <pubDate>Wed, 22 Jun 2022 23:48:00 +0800</pubDate>
       
       <guid>https://LunaZhuang.github.io/blog/html/</guid>
-      <description>HTML 描述了一個網站的結構語意隨著線索的呈現，使之成為一種標記語言而非程式語言。 寫網頁要清楚你的這個網頁的重點是什麼，才知道你的網頁要用什麼標籤撰寫。HTML 語意最重要，視覺外觀不是重點。 HTML 基本標籤分類 </description>
+      <description>關於網頁的組成 在網頁開發中最基本有三大元素：HTML、CSS、JavaScript。HTML 就是先將資料結構化，並給於資料標記分類。寫網頁中最主要的就是網頁內容，網頁內容就是我們要呈現的資料，網頁製作是將這些資料使用正確的 HTML 語法將資料標記起來。
+在 HTML 上標記標籤的方式是使用 &amp;lt;起始標籤&amp;gt;內容&amp;lt;/結束標籤&amp;gt; 的方式標記。 &amp;lt;&amp;gt; 這是標籤，裡面會有 &amp;lt;元素&amp;gt;，元素是告訴瀏覽器我這個標籤裡是什麼種類的資料，像是下圖我用 &amp;lt; p &amp;gt; 告訴他這是一段文字內容，網頁上就會呈現出來。</description>
     </item>
     
     <item>

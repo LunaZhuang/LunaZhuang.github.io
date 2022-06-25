@@ -217,7 +217,7 @@
 <h4 id="變數-未定義undefined-vs-沒有定義not-define">變數 未定義(undefined) VS 沒有定義(not define)</h4>
 <p><img src="/images/js-v&amp;c4.png" alt=""></p>
 <h4 id="變數提昇variable-hoisting與暫時性死區">變數提昇(variable hoisting)與暫時性死區</h4>
-<p>JavaScript 在瀏覽器執行時會有兩個階段，一個叫建立期(creation phases)另一個是執行期(execution phases)。<a href="https://www.javascripttutorial.net/javascript-execution-context">官網上的說明</a></p>
+<h5 id="javascript-在瀏覽器執行時會有兩個階段一個叫建立期creation-phases另一個是執行期execution-phases官網上的說明httpswwwjavascripttutorialnetjavascript-execution-context">JavaScript 在瀏覽器執行時會有兩個階段，一個叫建立期(creation phases)另一個是執行期(execution phases)。<a href="https://www.javascripttutorial.net/javascript-execution-context">官網上的說明</a></h5>
 <ol>
 <li>
 <p>建立期 JavaScript 會先將你宣告的變數儲存，再給他一個初始化的值 undefined。</p>
@@ -228,13 +228,13 @@
 </ol>
 <p><img src="/images/js-v&amp;c5.png" alt="">
 <img src="/images/js-v&amp;c6.png" alt=""></p>
-<p>ES6 後為了要修正 JavaScript 這個問題新增了 let 變數與 const 常數，在 let 與 const 上第一張圖執行結果與 var 變數是相同的，差別在與第二張圖，let 與 const 多了一個叫 TDZ(暫時死區)，執行後的結果會有所差異，請看下圖。
-<img src="/images/js-v&amp;c8.png" alt="">
+<h5 id="es6-後為了要修正-javascript-這個問題新增了-let-變數與-const-常數在-let-與-const-上第一張圖執行結果與-var-變數是相同的差別在與第二張圖let-與-const-多了一個叫-tdz暫時死區執行後的結果會有所差異請看下圖">ES6 後為了要修正 JavaScript 這個問題新增了 let 變數與 const 常數，在 let 與 const 上第一張圖執行結果與 var 變數是相同的，差別在與第二張圖，let 與 const 多了一個叫 TDZ(暫時死區)，執行後的結果會有所差異，請看下圖。</h5>
+<p><img src="/images/js-v&amp;c8.png" alt="">
 <img src="/images/js-v&amp;c7.png" alt=""></p>
 <h4 id="範圍鏈scope-chain">範圍鏈(Scope chain)</h4>
 <p><img src="/images/js-v&amp;c9.png" alt=""></p>
-<p>從上圖可知在 function 裡的 var 變數不會影響到外部程式，可在 if 身上會影響到外面的 console.log(a)，代表 var 是 <strong>function scope</strong>。</p>
-<p>同理從上圖可知 function 裡的 let 變數不會影響到外部程式，在 if 身上也不會影響到外面的 console.log(a)，代表 let 是 <strong>block scope{}</strong>。</p>
+<p><strong>從上圖可知在 function 裡的 var 變數不會影響到外部程式，可在 if 身上會影響到外面的 console.log(a)，代表 var 是 function scope。</strong></p>
+<p><strong>同理從上圖可知 function 裡的 let 變數不會影響到外部程式，在 if 身上也不會影響到外面的 console.log(a)，代表 let 是 block scope{}。</strong></p>
 <h4 id="letconstvar-怎麼選擇">let,const,var 怎麼選擇？</h4>
 <ul>
 <li>能用 const 就用 const，不能用 const 就改用 let</li>
