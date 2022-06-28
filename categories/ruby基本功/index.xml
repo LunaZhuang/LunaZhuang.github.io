@@ -14,7 +14,7 @@
       
       <guid>https://LunaZhuang.github.io/blog/ruby-loop/</guid>
       <description>為什麼要設迴圈？ 因為重複的代碼可以不用一直寫，只要寫好一個迴圈就可以設定他跑十次，最後的結果是一樣的，但可以少寫很多 code。
-迴圈種類 for 迴圈 while 迴圈 loop 迴圈 method 迴圈-Ruby 特有 迭代式迴圈 迴圈與迭代有什麼不同？ 迴圈：要設定條件，條件達到就結束迴圈。 迭代：通常會有個對象，把所有元素全部看過一次就好，不需要像其他迴圈一樣特別設定條件。 迴圈寫法 for 迴圈 names = [&amp;#34;eddie&amp;#34;,&amp;#34;joanne&amp;#34;,&amp;#34;john&amp;#34;,&amp;#34;sherly&amp;#34;] for name in names puts name end #設一個變數name一個一個把names裡面的東西印出來。 while 迴圈(小心變成無窮迴圈，條件設定要設好) x = 0 while x &amp;lt; 10 puts x x += 1 #改變條件 end #一開始x設為0，當x小於10時會印出來0，在印出來後改變條件，變成x=1，一直重複直到x=10。 邪惡分身 until，while not = until</description>
+迴圈種類 for 迴圈 while 迴圈 loop 迴圈 method 迴圈-Ruby 特有 迭代式迴圈 迴圈與迭代有什麼不同？ 迴圈：不斷的依據指定的條件重複執行某些指令。 迭代：通常會有個對象，針對某個集合的每個元素做某些事。 迴圈寫法 for 迴圈 names = [&amp;#34;eddie&amp;#34;,&amp;#34;joanne&amp;#34;,&amp;#34;john&amp;#34;,&amp;#34;sherly&amp;#34;] for name in names puts name end #設一個變數name一個一個把names裡面的東西印出來。 while 迴圈(小心變成無窮迴圈，條件設定要設好) x = 0 while x &amp;lt; 10 puts x x += 1 #改變條件 end #一開始x設為0，當x小於10時會印出來0，在印出來後改變條件，變成x=1，一直重複直到x=10。 邪惡分身 until，while not = until</description>
     </item>
     
     <item>
