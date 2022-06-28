@@ -6,7 +6,16 @@
     <description>Recent content in Categories on Luna&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 25 Jun 2022 16:30:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Jun 2022 22:30:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ruby基本功</title>
+      <link>https://LunaZhuang.github.io/categories/ruby%E5%9F%BA%E6%9C%AC%E5%8A%9F/</link>
+      <pubDate>Tue, 28 Jun 2022 22:30:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/categories/ruby%E5%9F%BA%E6%9C%AC%E5%8A%9F/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>JS入門</title>
       <link>https://LunaZhuang.github.io/categories/js%E5%85%A5%E9%96%80/</link>
@@ -22,15 +31,6 @@
       <pubDate>Wed, 22 Jun 2022 23:48:00 +0800</pubDate>
       
       <guid>https://LunaZhuang.github.io/categories/html/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ruby基本功</title>
-      <link>https://LunaZhuang.github.io/categories/ruby%E5%9F%BA%E6%9C%AC%E5%8A%9F/</link>
-      <pubDate>Wed, 22 Jun 2022 22:40:00 +0800</pubDate>
-      
-      <guid>https://LunaZhuang.github.io/categories/ruby%E5%9F%BA%E6%9C%AC%E5%8A%9F/</guid>
       <description></description>
     </item>
     
