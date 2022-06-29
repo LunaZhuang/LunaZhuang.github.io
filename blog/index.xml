@@ -8,6 +8,16 @@
     <language>zh-tw</language>
     <lastBuildDate>Tue, 29 Oct 2019 13:49:23 +0600</lastBuildDate><atom:link href="https://LunaZhuang.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Ruby 學習筆記-陣列&amp;範圍（Array＆Range）</title>
+      <link>https://LunaZhuang.github.io/blog/ruby-arrayrange/</link>
+      <pubDate>Wed, 29 Jun 2022 23:30:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/ruby-arrayrange/</guid>
+      <description>為什麼需要有陣列資料型態？ 因為一次只傳一個字串或數字太沒有效率，弄個集合包裝把所有資料放到裡面在一次傳過去。
+建立陣列 #使用Array類別 a = Array.new #使用中括號 b = [] #一樣可以建立陣列，但要小心裡面的東西會變成字串 list = %w(ruby php python) 使用陣列 陣列索引值都是從 0 開始計算，從後面就是由-1 開始。 list = [&amp;#34;ruby&amp;#34;,&amp;#34;php&amp;#34;,&amp;#34;python&amp;#34;,&amp;#34;c&amp;#34;,&amp;#34;java&amp;#34;,&amp;#34;JavaScript&amp;#34;] puts list[0] #印出 ruby puts list[1] #印出 php puts list[-1] #印出 JavaScript puts list[-2] #印出 java #ruby方法 puts list.</description>
+    </item>
+    
+    <item>
       <title>Ruby 學習筆記-迴圈與迭代（Loop&amp;Iteration）</title>
       <link>https://LunaZhuang.github.io/blog/ruby-loop/</link>
       <pubDate>Tue, 28 Jun 2022 22:30:00 +0800</pubDate>
