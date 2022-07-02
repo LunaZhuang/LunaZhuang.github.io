@@ -6,7 +6,16 @@
     <description>Recent content in Ruby基本功 on Luna&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 29 Jun 2022 23:30:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/categories/ruby%E5%9F%BA%E6%9C%AC%E5%8A%9F/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Jul 2022 21:40:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/categories/ruby%E5%9F%BA%E6%9C%AC%E5%8A%9F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ruby 學習筆記-方法(method)</title>
+      <link>https://LunaZhuang.github.io/blog/ruby-method/</link>
+      <pubDate>Sat, 02 Jul 2022 21:40:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/ruby-method/</guid>
+      <description>為什麼需要方法？ 可以重複使用。 可以讓程式碼變得更容易理解。 如何定義及使用 定義： def method_name(param1, param2) #參數一個或2個都可以，但有多少參數就要有多少引數 #內容 end 使用： method_name(param) #把方法呼叫出來 可以預設參數: def hello (someone = &amp;#34;luna&amp;#34;) puts &amp;#34;hi,#{someone} welcome my blog&amp;#34; end hello() #如果沒有放入引數，他會出現hi,luna welcome my blog #如果有放入引數hello(&amp;#34;lily&amp;#34;)，會出現hi,lily welcome my blog 所謂的回傳值 回傳 = 交回控制權</description>
+    </item>
+    
     <item>
       <title>Ruby 學習筆記-陣列&amp;範圍（Array＆Range）</title>
       <link>https://LunaZhuang.github.io/blog/ruby-arrayrange/</link>
