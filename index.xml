@@ -6,7 +6,18 @@
     <description>Recent content on Luna&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 02 Jul 2022 21:40:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 03 Jul 2022 20:08:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript-陣列(Array)</title>
+      <link>https://LunaZhuang.github.io/blog/js-array/</link>
+      <pubDate>Sun, 03 Jul 2022 20:08:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/js-array/</guid>
+      <description>為什麼需要有陣列資料型態？ 因為一次只傳一個字串或數字太沒有效率，弄個集合包裝把所有資料放到裡面在一次傳過去。
+在 JavaScript 可以放不同種類的資料型態，但其他語言程式不一定。
+建立陣列使用陣列 const list = [&amp;#34;a&amp;#34;, &amp;#34;b&amp;#34;,&amp;#34;c&amp;#34;, 1, 2, 3]; console.</description>
+    </item>
+    
     <item>
       <title>Ruby 學習筆記-方法(method)</title>
       <link>https://LunaZhuang.github.io/blog/ruby-method/</link>
