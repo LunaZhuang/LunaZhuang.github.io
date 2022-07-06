@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>Luna&#39;s Blog</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Ruby-Block學習">
+  <meta name="author" content="Luna">
+  <meta name="generator" content="Hugo 0.100.2" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/venobox/venobox.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/scss/style.min.css" media="screen">
+
+  <!-- Favicon -->
+<link rel="shortcut icon" href="https://LunaZhuang.github.io/images/favicon.png " type="image/x-icon">
+<link rel="icon" href="https://LunaZhuang.github.io/images/favicon.png " type="image/x-icon">
+
+  <!-- google analitycs -->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-231593772-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom ">
+      <a class="navbar-brand " href="https://LunaZhuang.github.io">
+        <img class=""
+          src="https://LunaZhuang.github.io/images/icon.png" alt="Luna&#39;s Blog"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        
+
+        
+
+        <ul class="navbar-nav ml-auto">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://LunaZhuang.github.io/">Home</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://LunaZhuang.github.io/about/">About</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://LunaZhuang.github.io/search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <h3 class="text-center">Ruby 學習筆記-區塊(Block)</h3>
+        <div class="mb-3 post-meta text-center">
+          <span>By Luna</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>06 July 2022</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          
+        <a href="/categories/ruby%e5%9f%ba%e6%9c%ac%e5%8a%9f"
+          class="text-primary">Ruby基本功</a>
+        
+        </div>
+        <div class="mt-1" style="border-top: 3px solid #dee2e6; height: 1rem;"></div>
+       
+       
+        
+        <div class="content mb-5">
+          <h4 id="block-是什麼">Block 是什麼？</h4>
+<p><strong>是一段不會被主動執行的程式碼，無法單獨存活</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    <span style="color:#40a070">5</span><span style="color:#666">.</span>times <span style="color:#007020;font-weight:bold">do</span> <span style="color:#666">|</span>x<span style="color:#666">|</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020">puts</span> i
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#40a070">5</span><span style="color:#666">.</span>times { <span style="color:#666">|</span>x<span style="color:#666">|</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020">puts</span> i
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>從上述例子中的<code>do...end</code>以及{}都是一個 Block</p>
+<h4 id="block-使用">Block 使用</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    <span style="">在方法後使用可以用</span><span style="color:#007020;font-weight:bold">yield</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">say</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020">puts</span> <span style="color:#4070a0">&#34;hi&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">yield</span>        <span style="color:#60a0b0;font-style:italic">#需要用yield把控制權暫時讓給say這個Block，如果沒有的話下方的say{}不會執行</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020">puts</span> <span style="color:#4070a0">&#34;hello&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    say{
+</span></span><span style="display:flex;"><span>        <span style="color:#007020">puts</span> <span style="color:#4070a0">&#34;welcome&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic"># hi</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic"># welcome</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">#hello</span>
+</span></span></code></pre></div><h4 id="還可以把值讓出去">還可以把值讓出去</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>     <span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">say</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020">puts</span> <span style="color:#4070a0">&#34;hi&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">yield</span> <span style="color:#40a070">3</span>        <span style="color:#60a0b0;font-style:italic">#可以在yield放值，把值讓給下方的Block</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020">puts</span> <span style="color:#4070a0">&#34;hello&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    say{ <span style="color:#666">|</span>x<span style="color:#666">|</span>           <span style="color:#60a0b0;font-style:italic">#可以接收上方，方法的值</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020">puts</span> x
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic"># 3</span>
+</span></span></code></pre></div><h4 id="block-會自動回傳值">Block 會自動回傳值</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>     <span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">say</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">if</span> <span style="color:#007020;font-weight:bold">yield</span> (<span style="color:#40a070">3</span>)    <span style="color:#60a0b0;font-style:italic">#1.讓給下方Block</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#007020">puts</span> <span style="color:#4070a0">&#34;yes&#34;</span>  <span style="color:#60a0b0;font-style:italic">#4.接收下方Block的回傳值，來判斷是否符合</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#007020">puts</span> <span style="color:#4070a0">&#34;no&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    say{ <span style="color:#666">|</span>x<span style="color:#666">|</span>           <span style="color:#60a0b0;font-style:italic">#2.接受上方方法</span>
+</span></span><span style="display:flex;"><span>        x <span style="color:#666">==</span> <span style="color:#40a070">3</span>         <span style="color:#60a0b0;font-style:italic">#3.判斷讓出來的值是否有等於3</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic"># yes</span>
+</span></span></code></pre></div><p><strong>Block 不使用 return</strong></p>
+<h4 id="block-不是參數">Block 不是參數</h4>
+<p><img src="/images/block.png" alt=""></p>
+<p><strong>如何確認方法讓出去是否有 Block</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">say</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">if</span> <span style="color:#007020">block_given?</span>  <span style="color:#60a0b0;font-style:italic">#確認是否有block</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">yield</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#40a070">1</span><span style="color:#666">.</span> say          <span style="color:#60a0b0;font-style:italic"># 空白</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#40a070">2</span><span style="color:#666">.</span> say{
+</span></span><span style="display:flex;"><span>       <span style="color:#007020">puts</span> <span style="color:#4070a0">&#34;hi&#34;</span>   <span style="color:#60a0b0;font-style:italic"># hi</span>
+</span></span><span style="display:flex;"><span>     }
+</span></span></code></pre></div><h4 id="兩種-block-的差異">兩種 Block 的差異</h4>
+<p><img src="/images/block2.png" alt=""></p>
+<h4 id="block-物件化被物件化後可單獨執行">Block 物件化：被物件化後，可單獨執行</h4>
+<ol>
+<li>
+<h5 id="使用-proc">使用 Proc</h5>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    say <span style="color:#666">=</span> <span style="color:#60add5">Proc</span><span style="color:#666">.</span>new {<span style="color:#666">|</span>x<span style="color:#666">|</span> x <span style="color:#666">+</span> <span style="color:#40a070">5</span>} <span style="color:#60a0b0;font-style:italic">#包裝後的程式碼區塊</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">#呼叫Proc有以下的方式，結果都一樣</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">p</span> say<span style="color:#666">.</span>call(<span style="color:#40a070">3</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">p</span> say<span style="color:#666">[</span><span style="color:#40a070">3</span><span style="color:#666">]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">p</span> say<span style="color:#666">.</span>(<span style="color:#40a070">3</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">p</span> say<span style="color:#666">.</span>===(<span style="color:#40a070">3</span>)               <span style="color:#60a0b0;font-style:italic">#3+5=8</span>
+</span></span></code></pre></div><ol start="2">
+<li>
+<h5 id="使用-lambda">使用 lambda</h5>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    say <span style="color:#666">=</span> <span style="color:#007020">lambda</span> {<span style="color:#666">|</span>x<span style="color:#666">|</span> x <span style="color:#666">+</span> <span style="color:#40a070">5</span>} <span style="color:#60a0b0;font-style:italic">#包裝後的程式碼區塊</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">#呼叫Proc有以下的方式，結果都一樣</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">p</span> say<span style="color:#666">.</span>call(<span style="color:#40a070">3</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">p</span> say<span style="color:#666">[</span><span style="color:#40a070">3</span><span style="color:#666">]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">p</span> say<span style="color:#666">.</span>(<span style="color:#40a070">3</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">p</span> say<span style="color:#666">.</span>===(<span style="color:#40a070">3</span>)               <span style="color:#60a0b0;font-style:italic">#3+5=8</span>
+</span></span></code></pre></div><ol start="3">
+<li>
+<h4 id="使用箭頭--">使用箭頭 -&gt;</h4>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    say <span style="color:#666">=</span> <span style="color:#666">-&gt;</span> (x) { x <span style="color:#666">+</span> <span style="color:#40a070">5</span>} <span style="color:#60a0b0;font-style:italic">#包裝後的程式碼區塊</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">#呼叫Proc有以下的方式，結果都一樣</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">p</span> say<span style="color:#666">.</span>call(<span style="color:#40a070">3</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">p</span> say<span style="color:#666">[</span><span style="color:#40a070">3</span><span style="color:#666">]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">p</span> say<span style="color:#666">.</span>(<span style="color:#40a070">3</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">p</span> say<span style="color:#666">.</span>===(<span style="color:#40a070">3</span>)               <span style="color:#60a0b0;font-style:italic">#3+5=8</span>
+</span></span></code></pre></div>
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "lunas-blog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<script>
+  var indexURL = "https://LunaZhuang.github.io/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://LunaZhuang.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/search/mark.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://LunaZhuang.github.io/js/script.min.js"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+</body>
+</html>
