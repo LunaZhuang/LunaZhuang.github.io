@@ -6,7 +6,19 @@
     <description>Recent content in Ruby基本功 on Luna&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 06 Jul 2022 16:30:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/categories/ruby%E5%9F%BA%E6%9C%AC%E5%8A%9F/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Jul 2022 21:40:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/categories/ruby%E5%9F%BA%E6%9C%AC%E5%8A%9F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ruby 學習筆記-物件導向程式設計(OOP))</title>
+      <link>https://LunaZhuang.github.io/blog/ruby-obj/</link>
+      <pubDate>Sat, 09 Jul 2022 21:40:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/ruby-obj/</guid>
+      <description>為什麼要有物件？ 物件 = 狀態(名詞) + 行為(動詞)
+透過物件導向程式設計，讓程式碼變得容易被理解與使用
+物件-類別與實體 類別就像是一個模型，透過這個模型可以製造出許多實體以下方程式碼為例
+定義類別： class Lily def eat puts &amp;#34; 好吃！&amp;#34; end end 產生實體： luna = Lily.</description>
+    </item>
+    
     <item>
       <title>Ruby 學習筆記-區塊(Block)</title>
       <link>https://LunaZhuang.github.io/blog/ruby-block/</link>
