@@ -6,9 +6,21 @@
     <description>Recent content on Luna&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 09 Jul 2022 21:40:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Jul 2022 01:50:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Ruby 學習筆記-物件導向程式設計(OOP))</title>
+      <title>Ruby 學習筆記-模組(Module)</title>
+      <link>https://LunaZhuang.github.io/blog/ruby-module/</link>
+      <pubDate>Sun, 10 Jul 2022 01:50:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/ruby-module/</guid>
+      <description>為什麼要用模組 class 繼承 class 的方法不就好了？為什麼還要有模組？ 因為你只是想要類別裡的其中一個方法，但為了這方法就要繼承這個類別裡的所有方法，這有點過本末倒置。
+定義與使用模組 模組的命名規定必須是常數常數必須要是大寫英文字母開頭
+include:作用在實體方法
+module Flyable #定義 def fly puts &amp;#34;fly&amp;#34; end end class Cat include Flyable #引進 end kitty = Cat.</description>
+    </item>
+    
+    <item>
+      <title>Ruby 學習筆記-物件導向程式設計(OOP)</title>
       <link>https://LunaZhuang.github.io/blog/ruby-obj/</link>
       <pubDate>Sat, 09 Jul 2022 21:40:00 +0800</pubDate>
       
