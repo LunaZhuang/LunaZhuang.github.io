@@ -8,6 +8,16 @@
     <language>zh-tw</language>
     <lastBuildDate>Tue, 29 Oct 2019 13:49:23 +0600</lastBuildDate><atom:link href="https://LunaZhuang.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>JavaScript-物件(Object)</title>
+      <link>https://LunaZhuang.github.io/blog/js-object/</link>
+      <pubDate>Sun, 10 Jul 2022 12:48:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/js-object/</guid>
+      <description>什麼是物件？ 物件 object = 一個東西＝屬性＋行為
+建立與使用物件 let hero = { //key = power,age //value = 100,20 power: 100, age: 20, attack: function () { console.</description>
+    </item>
+    
+    <item>
       <title>Ruby 學習筆記-模組(Module)</title>
       <link>https://LunaZhuang.github.io/blog/ruby-module/</link>
       <pubDate>Sun, 10 Jul 2022 01:50:00 +0800</pubDate>

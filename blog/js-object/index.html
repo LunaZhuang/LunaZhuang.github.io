@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>Luna&#39;s Blog</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JavaScript-Object">
+  <meta name="author" content="Luna">
+  <meta name="generator" content="Hugo 0.100.2" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/venobox/venobox.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/scss/style.min.css" media="screen">
+
+  <!-- Favicon -->
+<link rel="shortcut icon" href="https://LunaZhuang.github.io/images/favicon.png " type="image/x-icon">
+<link rel="icon" href="https://LunaZhuang.github.io/images/favicon.png " type="image/x-icon">
+
+  <!-- google analitycs -->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-231593772-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom ">
+      <a class="navbar-brand " href="https://LunaZhuang.github.io">
+        <img class=""
+          src="https://LunaZhuang.github.io/images/icon.png" alt="Luna&#39;s Blog"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        
+
+        
+
+        <ul class="navbar-nav ml-auto">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://LunaZhuang.github.io/">Home</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://LunaZhuang.github.io/about/">About</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://LunaZhuang.github.io/search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <h3 class="text-center">JavaScript-物件(Object)</h3>
+        <div class="mb-3 post-meta text-center">
+          <span>By Luna</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>10 July 2022</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          
+        <a href="/categories/js%e5%85%a5%e9%96%80"
+          class="text-primary">Js入門</a>
+        
+        </div>
+        <div class="mt-1" style="border-top: 3px solid #dee2e6; height: 1rem;"></div>
+       
+       
+        
+        <div class="content mb-5">
+          <h4 id="什麼是物件">什麼是物件？</h4>
+<p>物件 object = 一個東西＝屬性＋行為</p>
+<h4 id="建立與使用物件">建立與使用物件</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> hero <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">//key = power,age
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#60a0b0;font-style:italic">//value = 100,20
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  power<span style="color:#666">:</span> <span style="color:#40a070">100</span>,
+</span></span><span style="display:flex;"><span>  age<span style="color:#666">:</span> <span style="color:#40a070">20</span>,
+</span></span><span style="display:flex;"><span>  attack<span style="color:#666">:</span> <span style="color:#007020;font-weight:bold">function</span> () {
+</span></span><span style="display:flex;"><span>    console.log(<span style="color:#4070a0">&#34;hi&#34;</span>);
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>console.log(hero); <span style="color:#60a0b0;font-style:italic">//{ power: 100, age: 20 }
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>console.log(hero.age); <span style="color:#60a0b0;font-style:italic">//20
+</span></span></span></code></pre></div><h4 id="修改新增刪除">修改、新增、刪除</h4>
+<p>相比於 Ruby，JavaScript 在物件上可以在外部直接進行，舉例如下</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> hero <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  power<span style="color:#666">:</span> <span style="color:#40a070">100</span>,
+</span></span><span style="display:flex;"><span>  age<span style="color:#666">:</span> <span style="color:#40a070">20</span>,
+</span></span><span style="display:flex;"><span>  attack<span style="color:#666">:</span> <span style="color:#007020;font-weight:bold">function</span> () {
+</span></span><span style="display:flex;"><span>    console.log(<span style="color:#4070a0">&#34;hi&#34;</span>);
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//修改
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>hero.age <span style="color:#666">=</span> <span style="color:#40a070">18</span>;
+</span></span><span style="display:flex;"><span>console.log(hero.age); <span style="color:#60a0b0;font-style:italic">//18
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//新增屬性,要小心使用
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>hero.hello <span style="color:#666">=</span> <span style="color:#40a070">124</span>;
+</span></span><span style="display:flex;"><span>console.log(hero); <span style="color:#60a0b0;font-style:italic">//{ power: 100, age: 18, attack: [Function: attack], hello: 124 }
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//刪除屬性
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">delete</span> hero.age;
+</span></span><span style="display:flex;"><span>console.log(hero); <span style="color:#60a0b0;font-style:italic">//{ power: 100, attack: [Function: attack], hello: 124 }
+</span></span></span></code></pre></div><h5 id="其他使用">其他使用</h5>
+<p>1.當外部宣告的變數與常數與與物件裡的 key 同名時</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> age <span style="color:#666">=</span> <span style="color:#40a070">18</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> attack <span style="color:#666">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>  console.log(<span style="color:#4070a0">&#34;hi&#34;</span>);
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> hero <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  power<span style="color:#666">:</span> <span style="color:#40a070">100</span>,
+</span></span><span style="display:flex;"><span>  age, <span style="color:#60a0b0;font-style:italic">//只寫一個代表key與value是一樣的命名，但外面要有同名的宣告變數或常數
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  attack,
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><ol start="2">
+<li>用解構取出物件所有資料</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> obj <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  power<span style="color:#666">:</span> <span style="color:#40a070">100</span>,
+</span></span><span style="display:flex;"><span>  age<span style="color:#666">:</span> <span style="color:#40a070">123</span>,
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> { age, power } <span style="color:#666">=</span> obj; <span style="color:#60a0b0;font-style:italic">//解構(拆解)=&gt;常用
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>console.log(age);
+</span></span><span style="display:flex;"><span>console.log(power);
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//把上面名為obj的物件拆解後指定給另一個{age,power}常數
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//因為{age,power}常數與裡面有同名的key，所以可以直接把資料印出來
+</span></span></span></code></pre></div>
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "lunas-blog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<script>
+  var indexURL = "https://LunaZhuang.github.io/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://LunaZhuang.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/search/mark.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://LunaZhuang.github.io/js/script.min.js"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+</body>
+</html>

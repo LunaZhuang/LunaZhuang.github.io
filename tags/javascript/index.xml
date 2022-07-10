@@ -6,7 +6,17 @@
     <description>Recent content in JavaScript on Luna&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 03 Jul 2022 20:08:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Jul 2022 12:48:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript-物件(Object)</title>
+      <link>https://LunaZhuang.github.io/blog/js-object/</link>
+      <pubDate>Sun, 10 Jul 2022 12:48:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/js-object/</guid>
+      <description>什麼是物件？ 物件 object = 一個東西＝屬性＋行為
+建立與使用物件 let hero = { //key = power,age //value = 100,20 power: 100, age: 20, attack: function () { console.</description>
+    </item>
+    
     <item>
       <title>JavaScript-陣列(Array)</title>
       <link>https://LunaZhuang.github.io/blog/js-array/</link>
