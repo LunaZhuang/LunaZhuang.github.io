@@ -6,14 +6,34 @@
     <description>Recent content in JavaScript on Luna&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 10 Jul 2022 12:48:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Jul 2022 20:00:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>JavaScript-物件(Object)</title>
+      <title>JavaScript-this代名詞</title>
+      <link>https://LunaZhuang.github.io/blog/js-this/</link>
+      <pubDate>Sun, 17 Jul 2022 20:00:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/js-this/</guid>
+      <description>什麼是 this? this 是全域物件，在瀏覽器叫 window，在 node 叫 global。
+this 說明 誰呼叫，誰就是 this ， 沒有明確呼叫者 this 就是 window 在 JavaScript 裡 this 寫在哪沒有關係，跟怎麼執行有關。</description>
+    </item>
+    
+    <item>
+      <title>JavaScript-Event Loop</title>
+      <link>https://LunaZhuang.github.io/blog/js-eventloop/</link>
+      <pubDate>Sun, 17 Jul 2022 17:43:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/js-eventloop/</guid>
+      <description>什麼是呼叫堆疊(Call Stack) 程式執行的過程是先進後出(FILO)以下圖為說明：
+何謂 Event Loop 有些 function 是需要等待的，JavaScript 會用非同步來處理，其實這些 function 已完成只是先丟到 web api，等到時間到了再丟到 queue 排隊，如果堆疊區有 function 要處理，要等堆疊區無事，queue 裡排隊的 function 才會被丟出來。</description>
+    </item>
+    
+    <item>
+      <title>JavaScript-物件(Object)與物件導向</title>
       <link>https://LunaZhuang.github.io/blog/js-object/</link>
-      <pubDate>Sun, 10 Jul 2022 12:48:00 +0800</pubDate>
+      <pubDate>Sun, 17 Jul 2022 16:20:00 +0800</pubDate>
       
       <guid>https://LunaZhuang.github.io/blog/js-object/</guid>
-      <description>什麼是物件？ 物件 object = 一個東西＝屬性＋行為
+      <description>物件 什麼是物件？ 物件 object = 一個東西＝屬性＋行為
 建立與使用物件 let hero = { //key = power,age //value = 100,20 power: 100, age: 20, attack: function () { console.</description>
     </item>
     

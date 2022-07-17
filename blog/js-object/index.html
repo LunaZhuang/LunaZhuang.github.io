@@ -5,7 +5,7 @@
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JavaScript-Object">
+  <meta name="description" content="JavaScript-物件與物件導向">
   <meta name="author" content="Luna">
   <meta name="generator" content="Hugo 0.100.2" />
 
@@ -108,12 +108,12 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
-        <h3 class="text-center">JavaScript-物件(Object)</h3>
+        <h3 class="text-center">JavaScript-物件(Object)與物件導向</h3>
         <div class="mb-3 post-meta text-center">
           <span>By Luna</span>
           
           <span class="border-bottom border-primary px-2 mx-1"></span>
-          <span>10 July 2022</span>
+          <span>17 July 2022</span>
           
           <span class="border-bottom border-primary px-2 mx-1"></span>
           
@@ -126,9 +126,12 @@
        
         
         <div class="content mb-5">
-          <h4 id="什麼是物件">什麼是物件？</h4>
+          <ol>
+<li>
+<h4 id="物件">物件</h4>
+<h5 id="什麼是物件">什麼是物件？</h5>
 <p>物件 object = 一個東西＝屬性＋行為</p>
-<h4 id="建立與使用物件">建立與使用物件</h4>
+<h5 id="建立與使用物件">建立與使用物件</h5>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> hero <span style="color:#666">=</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">//key = power,age
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#60a0b0;font-style:italic">//value = 100,20
@@ -140,7 +143,7 @@
 </span></span><span style="display:flex;"><span>};
 </span></span><span style="display:flex;"><span>console.log(hero); <span style="color:#60a0b0;font-style:italic">//{ power: 100, age: 20 }
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>console.log(hero.age); <span style="color:#60a0b0;font-style:italic">//20
-</span></span></span></code></pre></div><h4 id="修改新增刪除">修改、新增、刪除</h4>
+</span></span></span></code></pre></div><h5 id="修改新增刪除">修改、新增、刪除</h5>
 <p>相比於 Ruby，JavaScript 在物件上可以在外部直接進行，舉例如下</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> hero <span style="color:#666">=</span> {
 </span></span><span style="display:flex;"><span>  power<span style="color:#666">:</span> <span style="color:#40a070">100</span>,
@@ -182,7 +185,75 @@
 </span></span><span style="display:flex;"><span>console.log(power);
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//把上面名為obj的物件拆解後指定給另一個{age,power}常數
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//因為{age,power}常數與裡面有同名的key，所以可以直接把資料印出來
-</span></span></span></code></pre></div>
+</span></span></span></code></pre></div></li>
+<li>
+<h4 id="物件導向">物件導向</h4>
+<ol>
+<li>
+<h5 id="在-javascript-裡所有物件都有__proto__">在 JavaScript 裡，所有物件都有<code>__proto__</code></h5>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> hero <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  name<span style="color:#666">:</span> <span style="color:#4070a0">&#34;kk&#34;</span>,
+</span></span><span style="display:flex;"><span>  power<span style="color:#666">:</span> <span style="color:#40a070">100</span>,
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p><img src="/images/js-object1.png" alt="">
+<img src="/images/js-object2.png" alt=""></p>
+<p>從上兩張圖可知，我們創建的物件本身只有 key 與 value 沒有方法，是透過 ＿proto__裡的方法借來使用，不需要完整的打完<code>hero.__proto__.toString()</code>只要<code>hero.toString()</code>就可以使用該方法。</p>
+<h6 id="objectcreate使用現有對像作為新創建對象的原型以此來做更一步的說明">Object.create()使用現有對像作為新創建對象的原型*(以此來做更一步的說明)*</h6>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//創建了一個新物件
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">const</span> hero <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  name<span style="color:#666">:</span> <span style="color:#4070a0">&#34;kk&#34;</span>,
+</span></span><span style="display:flex;"><span>  power<span style="color:#666">:</span> <span style="color:#40a070">100</span>,
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//以hero物件，為a物件的原型
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">const</span> a <span style="color:#666">=</span> <span style="color:#007020">Object</span>.create(hero);
+</span></span></code></pre></div><p><img src="/images/js-object3.png" alt="">
+<img src="/images/js-object4.png" alt=""></p>
+<p>單看 a 裡面是空物件，但每個物件都有<code>__proto__</code>，所以從<code>a.__proto__</code>中可以看到我所創建的 hero 物件，所以當使用<code>Object.create()</code>其實是將此物件加進ㄏ，使後來創建的物件可以使用該物件，即使後來創建的物件沒有該內容或方法。</p>
+<ol start="2">
+<li>
+<h5 id="所有-function-都有-prototype">所有 function 都有 <code>prototype</code></h5>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> heroCreator(name, power) {
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">//this-&gt;{}有new會做
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">this</span>.name <span style="color:#666">=</span> name;
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">this</span>.power <span style="color:#666">=</span> power;
+</span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">//return this會自動回傳
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> h1 <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> heroCreator(<span style="color:#4070a0">&#34;kk&#34;</span>, <span style="color:#40a070">100</span>); <span style="color:#60a0b0;font-style:italic">//有new會創建一個空物件，有物件就有__proto__，物件導向
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">const</span> h2 <span style="color:#666">=</span> heroCreator(<span style="color:#4070a0">&#34;kk&#34;</span>, <span style="color:#40a070">100</span>); <span style="color:#60a0b0;font-style:italic">//沒有new是function，沒有回傳值不會回傳東西
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>console.log(h1); <span style="color:#60a0b0;font-style:italic">//name:kk,power:100
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>console.log(h2); <span style="color:#60a0b0;font-style:italic">//undefined
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>heroCreator.prototype.attack <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">function</span> () {
+</span></span><span style="display:flex;"><span>  console.log(<span style="color:#40a070">1111</span>);
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p><img src="/images/js-object6.png" alt="">
+<img src="/images/js-object7.png" alt=""></p>
+<p><img src="/images/js-object5.png" alt="">
+我創建了一個 function，所有 function 都有 <code>prototype</code>，當我用 new 時會創建一個空物件，該物件的<code>__proto__</code>在這個時候會自動轉向<code>prototype</code>，所以在 <code>prototype{ }</code>加上行為，<code>__proto__</code>也可找得到，等於 ruby 的開放類別，我可以在原有的類別加上方法。</p>
+</li>
+<li>
+<h5 id="es6-後新增了語法糖衣-class">Es6 後新增了語法糖衣 class</h5>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> heroCreator {
+</span></span><span style="display:flex;"><span>  constructor(name, power) {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">this</span>.name <span style="color:#666">=</span> name;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">this</span>.power <span style="color:#666">=</span> power;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  attack() {
+</span></span><span style="display:flex;"><span>    console.log(<span style="color:#4070a0">&#34;attack!!&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> h1 <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> heroCreator(<span style="color:#4070a0">&#34;kk&#34;</span>, <span style="color:#40a070">100</span>);
+</span></span><span style="display:flex;"><span>console.log(h1); <span style="color:#60a0b0;font-style:italic">//heroCreator { name: &#39;kk&#39;, power: 100 }
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>h1.attack(); <span style="color:#60a0b0;font-style:italic">//attack!!
+</span></span></span></code></pre></div><p>從 Es6 後的物件導向會以此為主要寫法。</p>
+</li>
+</ol>
+
         </div>
 
         
