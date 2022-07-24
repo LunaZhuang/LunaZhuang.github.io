@@ -5,7 +5,7 @@
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="網頁開發新手的學習歷程">
+  <meta name="description" content="JavaScript-RegExp">
   <meta name="author" content="Luna">
   <meta name="generator" content="Hugo 0.100.2" />
 
@@ -104,169 +104,66 @@
 </header>
 <!-- /navigation -->
 
-
 <section class="section-sm">
   <div class="container">
     <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <h3 class="text-center">JavaScript-正規表達式(RegExp)</h3>
+        <div class="mb-3 post-meta text-center">
+          <span>By Luna</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>24 July 2022</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          
+        <a href="/categories/js%e5%85%a5%e9%96%80"
+          class="text-primary">Js入門</a>
         
-        <div class="col-lg-4">
-  <div class="widgets">
-    
-    <div class="widget">
-      
-      <h4 class="widget-title">About Me</h4>
-      
-      <img src="https://LunaZhuang.github.io/images/autor-luna.jpeg" alt=""
-        class="img-fluid author-thumb-sm d-block mx-auto rounded-circle mb-4" style="height: 140px;">
-      
-      <p>我是莊茹瑄，
-目前剛開始學習成為一個合格的網站開發人員，
-希望藉由寫文章來充實自己，
-也留下一些努力的紀錄。</p>
-      <a href="https://LunaZhuang.github.io/about/" class="btn btn-outline-primary">Know More</a>
-      
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Category</h4>
-      <ul class="list-unstyled">
-        <li><a
-            href="/categories/html/">HTML</a>
-        </li>
-        <li><a
-            href="/categories/js%e5%85%a5%e9%96%80/">Js入門</a>
-        </li>
-        <li><a
-            href="/categories/ruby%e5%9f%ba%e6%9c%ac%e5%8a%9f/">Ruby基本功</a>
-        </li>
-        <li><a
-            href="/categories/%e5%85%b6%e4%bb%96%e5%ad%b8%e7%bf%92/">其他學習</a>
-        </li>
-      </ul>
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Tag</h4>
-      <ul class="list-inline">
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/html/">HTML</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/javascript/">Javascript</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/ruby/">Ruby</a></li>
-      </ul>
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Social</h4>
-      <ul class="list-inline social-links">
+        </div>
+        <div class="mt-1" style="border-top: 3px solid #dee2e6; height: 1rem;"></div>
+       
+       
         
-        <li class="list-inline-item"><a href="https://github.com/LunaZhuang"><i class="ti-github"></i></a></li>
-        
-        <li class="list-inline-item"><a href="https://www.linkedin.com/in/%E8%8C%B9%E7%91%84-%E8%8E%8A-945a5022a/"><i class="ti-linkedin"></i></a></li>
-        
-      </ul>
-    </div>
+        <div class="content mb-5">
+          <h4 id="什麼是正規表達式regexp">什麼是正規表達式(RegExp)?</h4>
+<p>是電腦科學的一個概念。正規表示式使用單個字串來描述、符合一系列符合某個句法規則的字串。在很多文字編輯器裡，正規表達式通常被用來檢索、替換那些符合某個模式的文字。</p>
+<h4 id="正則表達式中的特殊字符">正則表達式中的特殊字符</h4>
+<h6 id="常用">常用</h6>
+<p><img src="/images/regexp1.png" alt=""></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">MDN 詳細介紹</a></p>
+<h4 id="範例">範例</h4>
+<p><img src="/images/regexp2.png" alt="">
+我在左下的身份字號中要找出哪些有符合規定，當我要搜尋字串時要/ / 開頭，上方<code>/[A-Z][12]\d{8}/</code>是我下的規範，其中的<code>[A-Z]</code>代表我第一個字符設定在大寫Ａ到Ｚ，<code>[12]</code>我第二個字符設定在數字 1 與 2 判定男女，<code>\d{8}</code>我餘下的字符都是數字並有 8 個數字。</p>
+<p><a href="https://rubular.com/">可以到此網址試試看</a></p>
 
-    <div class="widget">
-      <h6 class="widget-title">Contact Me</h6>
-      <ul class="list-unstyled">
-        
-                   
-        <li class="mb-3"><i class="ti-location-pin mr-3 text-primary"></i>Taiwan</li>
-        
-                   
-        <li class="mb-3"><a class="text-dark" href="mailto:ruxuanzhuang@gmail.com"><i
-              class="ti-email mr-3 text-primary"></i>ruxuanzhuang@gmail.com</a>
-        
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-        
-      <div class="col-lg-8 mb-5 mb-lg-0">
-        <div class="row">
-          
-          
-          <div class="col-md-12 mb-4">
-    <article class="card">
-        
-        <div class="card-body px-0">
-        <a href="https://LunaZhuang.github.io/tags/javascript/" class="h3 d-block my-3">JavaScript</a>
-        
-        
-        <div class="mb-3 post-meta">
-            <span>By Luna</span>
-            
-            <span class="border-bottom border-primary px-2 mx-1"></span>
-            <span>0001-01-01</span>
-            
-            <span class="border-bottom border-primary px-2 mx-1"></span>
-            
         </div>
-        <p class="card-text"></p>
-        <a href="https://LunaZhuang.github.io/tags/javascript/" class="btn btn-outline-primary">read more</a>
-        </div>
-    </article>
-</div>
-          
-          <div class="col-md-12 mb-4">
-    <article class="card">
-        
-        <div class="card-body px-0">
-        <a href="https://LunaZhuang.github.io/tags/ruby/" class="h3 d-block my-3">Ruby</a>
-        
-        
-        <div class="mb-3 post-meta">
-            <span>By Luna</span>
-            
-            <span class="border-bottom border-primary px-2 mx-1"></span>
-            <span>0001-01-01</span>
-            
-            <span class="border-bottom border-primary px-2 mx-1"></span>
-            
-        </div>
-        <p class="card-text"></p>
-        <a href="https://LunaZhuang.github.io/tags/ruby/" class="btn btn-outline-primary">read more</a>
-        </div>
-    </article>
-</div>
-          
-          <div class="col-md-12 mb-4">
-    <article class="card">
-        
-        <div class="card-body px-0">
-        <a href="https://LunaZhuang.github.io/tags/html/" class="h3 d-block my-3">HTML</a>
-        
-        
-        <div class="mb-3 post-meta">
-            <span>By Luna</span>
-            
-            <span class="border-bottom border-primary px-2 mx-1"></span>
-            <span>0001-01-01</span>
-            
-            <span class="border-bottom border-primary px-2 mx-1"></span>
-            
-        </div>
-        <p class="card-text"></p>
-        <a href="https://LunaZhuang.github.io/tags/html/" class="btn btn-outline-primary">read more</a>
-        </div>
-    </article>
-</div>
-          
-        </div>
-      </div>
-    
 
-      
-      <div class="col-12 mt-5">
         
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "lunas-blog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
       </div>
     </div>
   </div>
 </section>
-
 
 
 

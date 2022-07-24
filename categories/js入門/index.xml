@@ -6,7 +6,18 @@
     <description>Recent content in JS入門 on Luna&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 17 Jul 2022 20:00:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/categories/js%E5%85%A5%E9%96%80/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Jul 2022 21:15:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/categories/js%E5%85%A5%E9%96%80/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript-正規表達式(RegExp)</title>
+      <link>https://LunaZhuang.github.io/blog/js-regexp/</link>
+      <pubDate>Sun, 24 Jul 2022 21:15:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/js-regexp/</guid>
+      <description>什麼是正規表達式(RegExp)? 是電腦科學的一個概念。正規表示式使用單個字串來描述、符合一系列符合某個句法規則的字串。在很多文字編輯器裡，正規表達式通常被用來檢索、替換那些符合某個模式的文字。
+正則表達式中的特殊字符 常用 MDN 詳細介紹
+範例 我在左下的身份字號中要找出哪些有符合規定，當我要搜尋字串時要/ / 開頭，上方/[A-Z][12]\d{8}/是我下的規範，其中的[A-Z]代表我第一個字符設定在大寫Ａ到Ｚ，[12]我第二個字符設定在數字 1 與 2 判定男女，\d{8}我餘下的字符都是數字並有 8 個數字。</description>
+    </item>
+    
     <item>
       <title>JavaScript-this代名詞</title>
       <link>https://LunaZhuang.github.io/blog/js-this/</link>

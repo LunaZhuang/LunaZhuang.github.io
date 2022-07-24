@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>其他學習 on Luna&#39;s Blog</title>
+    <link>https://LunaZhuang.github.io/categories/%E5%85%B6%E4%BB%96%E5%AD%B8%E7%BF%92/</link>
+    <description>Recent content in 其他學習 on Luna&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sun, 24 Jul 2022 20:40:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/categories/%E5%85%B6%E4%BB%96%E5%AD%B8%E7%BF%92/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TDD(測試驅動開發)</title>
+      <link>https://LunaZhuang.github.io/blog/tdd/</link>
+      <pubDate>Sun, 24 Jul 2022 20:40:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/tdd/</guid>
+      <description>什麼是 TDD? 是一種開發流程，觀念是「先寫測試，在進入開發工作」。在進行開發工作以前，編寫測試，預先模擬欲測試的情境。
+為什麼要寫 TDD? 預防發生錯誤能馬上知道在哪?
+1.測試本身就是規格
+2.寫出更有信心的程式碼
+3.可以做出比較好的設計
+4.將來有重構的可能性</description>
+    </item>
+    
+  </channel>
+</rss>
