@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JS入門 on Luna&#39;s Blog</title>
-    <link>https://LunaZhuang.github.io/categories/js%E5%85%A5%E9%96%80/</link>
-    <description>Recent content in JS入門 on Luna&#39;s Blog</description>
+    <title>JS學習 on Luna&#39;s Blog</title>
+    <link>https://LunaZhuang.github.io/categories/js%E5%AD%B8%E7%BF%92/</link>
+    <description>Recent content in JS學習 on Luna&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 24 Jul 2022 21:15:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/categories/js%E5%85%A5%E9%96%80/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 30 Jul 2022 12:40:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/categories/js%E5%AD%B8%E7%BF%92/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript-閉包(Closures)</title>
+      <link>https://LunaZhuang.github.io/blog/js-closures/</link>
+      <pubDate>Sat, 30 Jul 2022 12:40:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/js-closures/</guid>
+      <description>什麼是閉包？ 閉包是一種資料結構，包含函式以及該函式被宣告時所建立的環境組合，因此當函式是在其宣告的語彙範疇之外執行時也能正常運作。
+在說閉包以前先來複習範圍練
+function outside() { let a = 1; function inside() { console.</description>
+    </item>
+    
     <item>
       <title>JavaScript-正規表達式(RegExp)</title>
       <link>https://LunaZhuang.github.io/blog/js-regexp/</link>
