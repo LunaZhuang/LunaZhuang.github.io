@@ -6,7 +6,18 @@
     <description>Recent content in JavaScript on Luna&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 30 Jul 2022 12:40:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Jul 2022 15:40:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript-立即呼叫(IIFE)</title>
+      <link>https://LunaZhuang.github.io/blog/js-iife/</link>
+      <pubDate>Sun, 31 Jul 2022 15:40:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/js-iife/</guid>
+      <description>什麼是 IIFE? 是一個定義完馬上就執行的 JavaScript function
+有什麼功能 不需要呼叫此函式，也能在函式建立後立即執行。 可以減少「全域變數」的產生，同時也避免了變數名稱衝突的機會 一般函示需要呼叫才會執行
+function getNumber() { var value = 2; return value; } console.</description>
+    </item>
+    
     <item>
       <title>JavaScript-閉包(Closures)</title>
       <link>https://LunaZhuang.github.io/blog/js-closures/</link>

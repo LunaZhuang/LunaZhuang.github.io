@@ -5,7 +5,7 @@
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JavaScript-Closures是什麼？">
+  <meta name="description" content="JavaScript-IIFE是什麼？">
   <meta name="author" content="Luna">
   <meta name="generator" content="Hugo 0.100.2" />
 
@@ -108,12 +108,12 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
-        <h3 class="text-center">JavaScript-閉包(Closures)</h3>
+        <h3 class="text-center">JavaScript-立即呼叫(IIFE)</h3>
         <div class="mb-3 post-meta text-center">
           <span>By Luna</span>
           
           <span class="border-bottom border-primary px-2 mx-1"></span>
-          <span>30 July 2022</span>
+          <span>31 July 2022</span>
           
           <span class="border-bottom border-primary px-2 mx-1"></span>
           
@@ -126,81 +126,73 @@
        
         
         <div class="content mb-5">
-          <h4 id="什麼是閉包">什麼是閉包？</h4>
-<p>閉包是一種資料結構，包含函式以及該函式被宣告時所建立的環境組合，因此當函式是在其宣告的語彙範疇之外執行時也能正常運作。</p>
-<p>在說閉包以前先來複習範圍練</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> outside() {
-</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">let</span> a <span style="color:#666">=</span> <span style="color:#40a070">1</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">function</span> inside() {
-</span></span><span style="display:flex;"><span>    console.log(a);
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>  inside();
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>outside(); <span style="color:#60a0b0;font-style:italic">//1
-</span></span></span></code></pre></div><p>在<code>inside()</code>這個函示裡是沒有 a 變數，因為沒有他會向外尋找，在上一層找到 a 變數就停止，假設在上一層也沒有就會再往外一層去做尋找，直到在全域裡也找不到，就會回傳 not defined。</p>
-<h4 id="有使用閉包與沒使用閉包的差別">有使用閉包與沒使用閉包的差別</h4>
+          <h4 id="什麼是-iife">什麼是 IIFE?</h4>
+<p>是一個定義完馬上就執行的 JavaScript function</p>
+<h4 id="有什麼功能">有什麼功能</h4>
 <ol>
-<li>
-<h6 id="沒使用閉包">沒使用閉包</h6>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> count <span style="color:#666">=</span> <span style="color:#40a070">0</span>;
-</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> number() {
-</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> <span style="color:#666">++</span>count;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>console.log(number());
-</span></span><span style="display:flex;"><span>console.log(number());
-</span></span><span style="display:flex;"><span>console.log(number());
-</span></span></code></pre></div><p>當我想要累加時會用一個全域變數來儲存，但當時用 var 就有可能會影響到其他程式碼，並造成錯誤。
-如果我用 let，因為 let 是 block scope{}，出去{}後就會消失數字也不會累加上去，永遠都會是１。</p>
-</li>
-<li>
-<h6 id="有使用閉包">有使用閉包</h6>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> number() {
-</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">let</span> count <span style="color:#666">=</span> <span style="color:#40a070">0</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">function</span> times() {
-</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#666">++</span>count;
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> times;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> witch <span style="color:#666">=</span> number();
-</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> witch2 <span style="color:#666">=</span> number();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>console.log(witch()); <span style="color:#60a0b0;font-style:italic">//1
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>console.log(witch()); <span style="color:#60a0b0;font-style:italic">//2
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>console.log(witch()); <span style="color:#60a0b0;font-style:italic">//3
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>console.log(witch2()); <span style="color:#60a0b0;font-style:italic">//1
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>console.log(witch2()); <span style="color:#60a0b0;font-style:italic">//2
-</span></span></span></code></pre></div><p>像這樣使用閉包就算不用 let 宣告變數，也不用擔心 var 變數會污染到，不是這個函式的其他程式碼，因為範圍練不在上一層找不到，所以不會影響。而且 let 變數也因為閉包而不會消失，而是可以繼續累加，使用閉包還可以使不同物件的累加不會相互影響。</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> number() {
-</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">let</span> count <span style="color:#666">=</span> <span style="color:#40a070">0</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> () =&gt; <span style="color:#666">++</span>count;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> witch <span style="color:#666">=</span> number();
-</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> witch2 <span style="color:#666">=</span> number();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>console.log(witch()); <span style="color:#60a0b0;font-style:italic">//1
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>console.log(witch()); <span style="color:#60a0b0;font-style:italic">//2
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>console.log(witch()); <span style="color:#60a0b0;font-style:italic">//3
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>console.log(witch2()); <span style="color:#60a0b0;font-style:italic">//1
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>console.log(witch2()); <span style="color:#60a0b0;font-style:italic">//2
-</span></span></span></code></pre></div><p>還可以搭配箭頭函示使程式碼更簡短。</p>
-</li>
+<li>不需要呼叫此函式，也能在函式建立後立即執行。</li>
+<li>可以減少「全域變數」的產生，同時也避免了變數名稱衝突的機會</li>
 </ol>
-<h4 id="settimeout產生的閉包">setTimeout()產生的閉包</h4>
-<p>同樣的函式<code>let</code>與<code>var</code>的會產生不同的結果</p>
+<p>一般函示需要呼叫才會執行</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> getNumber() {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">var</span> value <span style="color:#666">=</span> <span style="color:#40a070">2</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> value;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>console.log(getNumber()); <span style="color:#60a0b0;font-style:italic">// 2
+</span></span></span></code></pre></div><p>IIFE 只要在 function 外加上()，並在 function 後加上()就可以不需呼叫，就可以執行</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">function</span> () {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">var</span> value <span style="color:#666">=</span> <span style="color:#40a070">2</span>;
+</span></span><span style="display:flex;"><span>  console.log(value); <span style="color:#60a0b0;font-style:italic">// 2
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>})();
+</span></span></code></pre></div><p>用箭頭函示更簡化</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>(() =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">var</span> value <span style="color:#666">=</span> <span style="color:#40a070">2</span>;
+</span></span><span style="display:flex;"><span>  console.log(value); <span style="color:#60a0b0;font-style:italic">// 2
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>})();
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>(<span style="color:#007020;font-weight:bold">function</span> () {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">var</span> value <span style="color:#666">=</span> <span style="color:#40a070">2</span>;
+</span></span><span style="display:flex;"><span>  console.log(value); <span style="color:#60a0b0;font-style:italic">// 2
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>})();
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//數字2只能在在裡面印出，外層無法取得
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>除非<span style="">：</span>
+</span></span><span style="display:flex;"><span>console.log(
+</span></span><span style="display:flex;"><span>  (<span style="color:#007020;font-weight:bold">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">var</span> value <span style="color:#666">=</span> <span style="color:#40a070">2</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">return</span> value;
+</span></span><span style="display:flex;"><span>  })()
+</span></span><span style="display:flex;"><span>); <span style="color:#60a0b0;font-style:italic">// 2
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>或者是<span style="">：</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> number <span style="color:#666">=</span> (<span style="color:#007020;font-weight:bold">function</span> () {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">var</span> value <span style="color:#666">=</span> <span style="color:#40a070">2</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> value;
+</span></span><span style="display:flex;"><span>})();
+</span></span><span style="display:flex;"><span>console.log(number); <span style="color:#60a0b0;font-style:italic">// 2
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//用number變數去接值
+</span></span></span></code></pre></div><h4 id="以-settimeout來說明">以 setTimeout()來說明</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (<span style="color:#007020;font-weight:bold">var</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span>; i <span style="color:#666">&lt;</span> <span style="color:#40a070">3</span>; i<span style="color:#666">++</span>) {
 </span></span><span style="display:flex;"><span>  setTimeout(() =&gt; {
 </span></span><span style="display:flex;"><span>    console.log(i); <span style="color:#60a0b0;font-style:italic">// 3,3,3
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  }, i <span style="color:#666">*</span> <span style="color:#40a070">1000</span>);
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>因為 var 是全域變數，是屬於 function socpe，這個變數會一直在，所以不會產生閉包，要等 stack 清空排隊的資料才會上去，等到時候 i 已變成 3。</p>
+</span></span></code></pre></div><p>for 迴圈已跑完，setTimeout 才開始要執行，當執行要抓 i 時 i 已變成 3</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (<span style="color:#007020;font-weight:bold">var</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span>; i <span style="color:#666">&lt;</span> <span style="color:#40a070">3</span>; i<span style="color:#666">++</span>) {
+</span></span><span style="display:flex;"><span>  (<span style="color:#007020;font-weight:bold">function</span> (i) {
+</span></span><span style="display:flex;"><span>    setTimeout(() =&gt; {
+</span></span><span style="display:flex;"><span>      console.log(i); <span style="color:#60a0b0;font-style:italic">//0,1,2
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    }, <span style="color:#40a070">1000</span> <span style="color:#666">*</span> i);
+</span></span><span style="display:flex;"><span>  })(i);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>用 IIFE 就可以把 i 當參數傳入並一起跑到 web apis 排隊印出。</p>
+<p>但 ES6 以後有了 let、const 變數的加入只要把變數改為 let 就算不使用 IIFE 也會有同樣的效果，造成這樣的原因則是閉包。<a href="../js-closures">閉包說明</a></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (<span style="color:#007020;font-weight:bold">let</span> i <span style="color:#666">=</span> <span style="color:#40a070">0</span>; i <span style="color:#666">&lt;</span> <span style="color:#40a070">3</span>; i<span style="color:#666">++</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#60a0b0;font-style:italic">//Closure 閉包
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  setTimeout(() =&gt; {
 </span></span><span style="display:flex;"><span>    console.log(i); <span style="color:#60a0b0;font-style:italic">//0,1,2
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  }, i <span style="color:#666">*</span> <span style="color:#40a070">1000</span>);
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>因為 i 是用 let 宣告是屬於 block socpe 所以如果等到迴圈跑完，我 i 都不見了，為了防止 i 不見會把 i 包起來一起跑到 web apis 排隊印出。</p>
-
+</span></span></code></pre></div>
         </div>
 
         
