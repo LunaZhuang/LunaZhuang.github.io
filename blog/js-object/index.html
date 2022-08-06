@@ -162,7 +162,7 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">delete</span> hero.age;
 </span></span><span style="display:flex;"><span>console.log(hero); <span style="color:#60a0b0;font-style:italic">//{ power: 100, attack: [Function: attack], hello: 124 }
 </span></span></span></code></pre></div><h5 id="其他使用">其他使用</h5>
-<p>1.當外部宣告的變數與常數與與物件裡的 key 同名時</p>
+<p>1.當外部宣告的變數與常數和物件裡的 key 同名時</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> age <span style="color:#666">=</span> <span style="color:#40a070">18</span>;
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> attack <span style="color:#666">=</span> () =&gt; {
 </span></span><span style="display:flex;"><span>  console.log(<span style="color:#4070a0">&#34;hi&#34;</span>);
@@ -210,7 +210,7 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">const</span> a <span style="color:#666">=</span> <span style="color:#007020">Object</span>.create(hero);
 </span></span></code></pre></div><p><img src="/images/js-object3.png" alt="">
 <img src="/images/js-object4.png" alt=""></p>
-<p>單看 a 裡面是空物件，但每個物件都有<code>__proto__</code>，所以從<code>a.__proto__</code>中可以看到我所創建的 hero 物件，所以當使用<code>Object.create()</code>其實是將此物件加進ㄏ，使後來創建的物件可以使用該物件，即使後來創建的物件沒有該內容或方法。</p>
+<p>單看 a 裡面是空物件，但每個物件都有<code>__proto__</code>，所以從<code>a.__proto__</code>中可以看到我所創建的 hero 物件，所以當使用<code>Object.create()</code>其實是將此物件加進去，使後來創建的物件可以使用該物件，即使後來創建的物件沒有該內容或方法。</p>
 <ol start="2">
 <li>
 <h5 id="所有-function-都有-prototype">所有 function 都有 <code>prototype</code></h5>

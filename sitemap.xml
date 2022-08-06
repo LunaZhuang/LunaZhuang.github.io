@@ -3,7 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://LunaZhuang.github.io/categories/</loc>
-    <lastmod>2022-07-31T15:40:00+08:00</lastmod>
+    <lastmod>2022-08-06T16:20:00+08:00</lastmod>
+  </url><url>
+    <loc>https://LunaZhuang.github.io/</loc>
+    <lastmod>2022-08-06T16:20:00+08:00</lastmod>
+  </url><url>
+    <loc>https://LunaZhuang.github.io/categories/rails%E5%AD%B8%E7%BF%92/</loc>
+    <lastmod>2022-08-06T16:20:00+08:00</lastmod>
+  </url><url>
+    <loc>https://LunaZhuang.github.io/tags/ruby-on-rails/</loc>
+    <lastmod>2022-08-06T16:20:00+08:00</lastmod>
+  </url><url>
+    <loc>https://LunaZhuang.github.io/blog/rails-mvc/</loc>
+    <lastmod>2022-08-06T16:20:00+08:00</lastmod>
+  </url><url>
+    <loc>https://LunaZhuang.github.io/tags/</loc>
+    <lastmod>2022-08-06T16:20:00+08:00</lastmod>
   </url><url>
     <loc>https://LunaZhuang.github.io/tags/javascript/</loc>
     <lastmod>2022-07-31T15:40:00+08:00</lastmod>
@@ -12,12 +27,6 @@
     <lastmod>2022-07-31T15:40:00+08:00</lastmod>
   </url><url>
     <loc>https://LunaZhuang.github.io/categories/js%E5%AD%B8%E7%BF%92/</loc>
-    <lastmod>2022-07-31T15:40:00+08:00</lastmod>
-  </url><url>
-    <loc>https://LunaZhuang.github.io/</loc>
-    <lastmod>2022-07-31T15:40:00+08:00</lastmod>
-  </url><url>
-    <loc>https://LunaZhuang.github.io/tags/</loc>
     <lastmod>2022-07-31T15:40:00+08:00</lastmod>
   </url><url>
     <loc>https://LunaZhuang.github.io/blog/js-closures/</loc>

@@ -6,7 +6,17 @@
     <description>Recent content on Luna&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 31 Jul 2022 15:40:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Aug 2022 16:20:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ruby on Rails - MVC架構</title>
+      <link>https://LunaZhuang.github.io/blog/rails-mvc/</link>
+      <pubDate>Sat, 06 Aug 2022 16:20:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/rails-mvc/</guid>
+      <description>什麼是 MVC 架構？ 是軟體工程中的一種軟體架構模式，是希望能把應用程式的內部運作歸納成不同的部門，讓每個部門各自負責不同的關注點，把不同意義的程式碼放在不同的檔案裡，Rails 就是採用 Model(模型)、View(視圖）、Controller（控制器）（簡稱 MVC）的方式設計的。
+這麼做的好處？ 分工容易 整個專案拆解成 MVC 結構之後，雖然檔案變多、變分散了，但也因此更容易進行分工，當團隊人數增加，每個人可以在各自負責的部份進行開發，較不易互相衝突、干擾。 方便管理 整個 Rails 專案都是遵循 MVC 的慣例結構，所以即使是不同程度的開發者寫出來的 Rails 專案，Controller、Model、View 大多都會放在相同位置的目錄裡，不會有太大的差別。 用圖來解釋 首先當使用者進入網站後，會根據想查到的資訊尋找相對的路徑，就像你去戶政事務所，門口有個阿桑會問你你要辦什麼業務。</description>
+    </item>
+    
     <item>
       <title>JavaScript-立即呼叫(IIFE)</title>
       <link>https://LunaZhuang.github.io/blog/js-iife/</link>

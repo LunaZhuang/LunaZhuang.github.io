@@ -6,7 +6,16 @@
     <description>Recent content in Categories on Luna&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 31 Jul 2022 15:40:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Aug 2022 16:20:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rails學習</title>
+      <link>https://LunaZhuang.github.io/categories/rails%E5%AD%B8%E7%BF%92/</link>
+      <pubDate>Sat, 06 Aug 2022 16:20:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/categories/rails%E5%AD%B8%E7%BF%92/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>JS學習</title>
       <link>https://LunaZhuang.github.io/categories/js%E5%AD%B8%E7%BF%92/</link>
