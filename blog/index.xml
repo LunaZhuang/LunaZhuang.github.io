@@ -8,6 +8,16 @@
     <language>zh-tw</language>
     <lastBuildDate>Tue, 29 Oct 2019 13:49:23 +0600</lastBuildDate><atom:link href="https://LunaZhuang.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Ruby on Rails - Request Forgery Protection</title>
+      <link>https://LunaZhuang.github.io/blog/rails-authenticitytoken/</link>
+      <pubDate>Sun, 07 Aug 2022 16:30:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/rails-authenticitytoken/</guid>
+      <description>什麼是 Request Forgery Protection？ 跨站點請求偽造是一種攻擊類型，其中只要有心人士看網站的原始碼，就可以知道將表單資料往哪邊送，若他寫了小程式，就可能在你不知情或未經許可的情況下添加、修改或刪除網站上的數據。
+如果是用 POST 進來 Rails 會檢查你有沒有 AuthenticityToken，有的話 Rails 會先比對你送進來的 AuthenticityToken 是不是我網站發出的，是一樣的才可以送資料進來，而且每次刷新的 AuthenticityToken 都會不一樣，不是我網站發出的跟沒有 AuthenticityToken 就當作是無效是別的站位打過來的。</description>
+    </item>
+    
+    <item>
       <title>Ruby on Rails - MVC架構</title>
       <link>https://LunaZhuang.github.io/blog/rails-mvc/</link>
       <pubDate>Sat, 06 Aug 2022 16:20:00 +0800</pubDate>
