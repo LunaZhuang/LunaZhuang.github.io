@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>Luna&#39;s Blog</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content=" Rails使用了Strong Parameters的機制來檢查params參數必須經過檢查才可以做Mass assignment，如果沒使用會出現ForbiddenAttributesError的錯誤訊息。">
+  <meta name="author" content="Luna">
+  <meta name="generator" content="Hugo 0.100.2" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/venobox/venobox.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/scss/style.min.css" media="screen">
+
+  <!-- Favicon -->
+<link rel="shortcut icon" href="https://LunaZhuang.github.io/images/favicon.png " type="image/x-icon">
+<link rel="icon" href="https://LunaZhuang.github.io/images/favicon.png " type="image/x-icon">
+
+  <!-- google analitycs -->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-231593772-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom ">
+      <a class="navbar-brand " href="https://LunaZhuang.github.io">
+        <img class=""
+          src="https://LunaZhuang.github.io/images/icon.png" alt="Luna&#39;s Blog"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        
+
+        
+
+        <ul class="navbar-nav ml-auto">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://LunaZhuang.github.io/">Home</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://LunaZhuang.github.io/about/">About</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://LunaZhuang.github.io/search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <h3 class="text-center">Ruby on Rails - Strong Parameters</h3>
+        <div class="mb-3 post-meta text-center">
+          <span>By Luna</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>09 August 2022</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          
+        <a href="/categories/rails%e5%ad%b8%e7%bf%92"
+          class="text-primary">Rails學習</a>
+        
+        </div>
+        <div class="mt-1" style="border-top: 3px solid #dee2e6; height: 1rem;"></div>
+       
+       
+        
+        <div class="content mb-5">
+          <h4 id="什麼是-strong-parameters">什麼是 Strong Parameters？</h4>
+<p>因為 Rails 裡有個功能叫 Mass assignemet 這個功能的主用用途是可以跟 Rails form_with 方法產生的表單做配套，在新增或修改時，可以直接傳入一個 Hash 來設定屬性，所以我們可以直接將網頁表單上的參數直接丟進 params，裡面有很多我表單上的資料，這樣我就不需要一個一個送資料而是一次搞定，但因為表單是 HTML 的表單，如果有惡意使用者，就可以自己新增欄位來攥改表單，因此有了 Strong Parameters。</p>
+<p>可以使用 Strong Parameters 來有意識地決定資料表的哪些欄位，可以被寫入資料庫，<code>params.require(:book).permit(:name, :content, :price)</code>，當出現不符合我規定可寫入的欄位時，只寫入我所允許的我不允許的就會被過濾掉。</p>
+<p>因此當你在做新增或修改時沒有用 Strong Parameters 會出現以下錯誤訊息，就是要提醒你使用 Strong Parameters。
+<img src="/images/rails-sp.png" alt=""></p>
+
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "lunas-blog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<script>
+  var indexURL = "https://LunaZhuang.github.io/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://LunaZhuang.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/search/mark.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://LunaZhuang.github.io/js/script.min.js"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+</body>
+</html>

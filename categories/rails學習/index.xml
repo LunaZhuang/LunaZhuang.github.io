@@ -6,7 +6,16 @@
     <description>Recent content in Rails學習 on Luna&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 07 Aug 2022 16:30:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/categories/rails%E5%AD%B8%E7%BF%92/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Aug 2022 14:50:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/categories/rails%E5%AD%B8%E7%BF%92/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ruby on Rails - Strong Parameters</title>
+      <link>https://LunaZhuang.github.io/blog/rails-strong-parameters/</link>
+      <pubDate>Tue, 09 Aug 2022 14:50:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/rails-strong-parameters/</guid>
+      <description>什麼是 Strong Parameters？ 因為 Rails 裡有個功能叫 Mass assignemet 這個功能的主用用途是可以跟 Rails form_with 方法產生的表單做配套，在新增或修改時，可以直接傳入一個 Hash 來設定屬性，所以我們可以直接將網頁表單上的參數直接丟進 params，裡面有很多我表單上的資料，這樣我就不需要一個一個送資料而是一次搞定，但因為表單是 HTML 的表單，如果有惡意使用者，就可以自己新增欄位來攥改表單，因此有了 Strong Parameters。</description>
+    </item>
+    
     <item>
       <title>Ruby on Rails - Request Forgery Protection</title>
       <link>https://LunaZhuang.github.io/blog/rails-authenticitytoken/</link>
