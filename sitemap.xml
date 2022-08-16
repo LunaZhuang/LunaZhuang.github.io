@@ -3,10 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://LunaZhuang.github.io/categories/</loc>
-    <lastmod>2022-08-13T13:20:00+08:00</lastmod>
+    <lastmod>2022-08-16T11:30:00+08:00</lastmod>
   </url><url>
     <loc>https://LunaZhuang.github.io/</loc>
-    <lastmod>2022-08-13T13:20:00+08:00</lastmod>
+    <lastmod>2022-08-16T11:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://LunaZhuang.github.io/categories/rails%E5%AD%B8%E7%BF%92/</loc>
+    <lastmod>2022-08-16T11:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://LunaZhuang.github.io/tags/ruby-on-rails/</loc>
+    <lastmod>2022-08-16T11:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://LunaZhuang.github.io/blog/rails-find/</loc>
+    <lastmod>2022-08-16T11:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://LunaZhuang.github.io/tags/</loc>
+    <lastmod>2022-08-16T11:30:00+08:00</lastmod>
   </url><url>
     <loc>https://LunaZhuang.github.io/categories/%E5%85%B6%E4%BB%96%E5%AD%B8%E7%BF%92/</loc>
     <lastmod>2022-08-13T13:20:00+08:00</lastmod>
@@ -14,16 +26,7 @@
     <loc>https://LunaZhuang.github.io/blog/tailwind/</loc>
     <lastmod>2022-08-13T13:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://LunaZhuang.github.io/categories/rails%E5%AD%B8%E7%BF%92/</loc>
-    <lastmod>2022-08-09T14:50:00+08:00</lastmod>
-  </url><url>
-    <loc>https://LunaZhuang.github.io/tags/ruby-on-rails/</loc>
-    <lastmod>2022-08-09T14:50:00+08:00</lastmod>
-  </url><url>
     <loc>https://LunaZhuang.github.io/blog/rails-strong-parameters/</loc>
-    <lastmod>2022-08-09T14:50:00+08:00</lastmod>
-  </url><url>
-    <loc>https://LunaZhuang.github.io/tags/</loc>
     <lastmod>2022-08-09T14:50:00+08:00</lastmod>
   </url><url>
     <loc>https://LunaZhuang.github.io/blog/rails-authenticitytoken/</loc>
