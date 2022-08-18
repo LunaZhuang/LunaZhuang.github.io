@@ -6,7 +6,17 @@
     <description>Recent content in JS學習 on Luna&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 31 Jul 2022 15:40:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/categories/js%E5%AD%B8%E7%BF%92/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Aug 2022 22:30:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/categories/js%E5%AD%B8%E7%BF%92/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript-解構賦值</title>
+      <link>https://LunaZhuang.github.io/blog/js-destructuring-assignment/</link>
+      <pubDate>Wed, 17 Aug 2022 22:30:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/js-destructuring-assignment/</guid>
+      <description>解構賦值是什麼？ 解構賦值 (Destructuring assignment) 語法是一種 JavaScript 運算式，用以拆解物件與陣列中的資料成為獨立變數。
+使用方式 陣列解構 用新的陣列變數[a, b, c] 將 list 陣列裡的值分別指派給 a、b、c 變數，此時 a = 3, b = 6, c = 9。</description>
+    </item>
+    
     <item>
       <title>JavaScript-立即呼叫(IIFE)</title>
       <link>https://LunaZhuang.github.io/blog/js-iife/</link>
