@@ -14,7 +14,7 @@
       
       <guid>https://LunaZhuang.github.io/blog/js-destructuring-assignment/</guid>
       <description>解構賦值是什麼？ 解構賦值 (Destructuring assignment) 語法是一種 JavaScript 運算式，用以拆解物件與陣列中的資料成為獨立變數。
-使用方式 陣列解構 用新的陣列變數[a, b, c] 將 list 陣列裡的值分別指派給 a、b、c 變數，此時 a = 3, b = 6, c = 9。</description>
+使用方式 陣列解構 用新的陣列變數[White, Red, Yellow] 將 flowers 陣列裡的值分別指派給 White、Red、Yellow 變數，此時 White = Lily, Red = Rose, Yellow = Sunflower。</description>
     </item>
     
     <item>

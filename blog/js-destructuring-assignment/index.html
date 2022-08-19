@@ -132,61 +132,73 @@
 <ol>
 <li>
 <h5 id="陣列解構">陣列解構</h5>
-<p>用新的陣列變數[a, b, c] 將 list 陣列裡的值分別指派給 a、b、c 變數，此時 a = 3, b = 6, c = 9。</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> list <span style="color:#666">=</span> [<span style="color:#40a070">3</span>, <span style="color:#40a070">6</span>, <span style="color:#40a070">9</span>];
-</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> [a, b, c] <span style="color:#666">=</span> list;
-</span></span><span style="display:flex;"><span>console.log(a); <span style="color:#60a0b0;font-style:italic">//3
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>console.log(b); <span style="color:#60a0b0;font-style:italic">//6
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>console.log(c); <span style="color:#60a0b0;font-style:italic">//9
+<p><strong>用新的陣列變數[White, Red, Yellow] 將 flowers 陣列裡的值分別指派給 White、Red、Yellow 變數，此時 White = Lily, Red = Rose, Yellow = Sunflower。</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> flowers <span style="color:#666">=</span> [<span style="color:#4070a0">&#34;Lily&#34;</span>, <span style="color:#4070a0">&#34;Rose&#34;</span>, <span style="color:#4070a0">&#34;Sunflower&#34;</span>];
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> [White, Red, Yellow] <span style="color:#666">=</span> flowers;
+</span></span><span style="display:flex;"><span>console.log(White); <span style="color:#60a0b0;font-style:italic">//Lily
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>console.log(Red); <span style="color:#60a0b0;font-style:italic">//Rose
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>console.log(Yellow); <span style="color:#60a0b0;font-style:italic">//Sunflower
+</span></span></span></code></pre></div><p><strong>可簡化為</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> [White, Red, Yellow] <span style="color:#666">=</span> [<span style="color:#4070a0">&#34;Lily&#34;</span>, <span style="color:#4070a0">&#34;Rose&#34;</span>, <span style="color:#4070a0">&#34;Sunflower&#34;</span>];
+</span></span><span style="display:flex;"><span>console.log(White, Red, Yellow); <span style="color:#60a0b0;font-style:italic">//Lily Rose Sunflower
 </span></span></span></code></pre></div><p><strong>也可以只取其中一個值，以下為例取出第一個值</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> list <span style="color:#666">=</span> [<span style="color:#40a070">3</span>, <span style="color:#40a070">6</span>, <span style="color:#40a070">9</span>];
-</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> [a] <span style="color:#666">=</span> list;
-</span></span><span style="display:flex;"><span>console.log(a); <span style="color:#60a0b0;font-style:italic">//3
-</span></span></span></code></pre></div><p><strong>只取前 2 個值，以下為例取出第 1、2 的值</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> list <span style="color:#666">=</span> [<span style="color:#40a070">3</span>, <span style="color:#40a070">6</span>, <span style="color:#40a070">9</span>];
-</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> [a, b] <span style="color:#666">=</span> list;
-</span></span><span style="display:flex;"><span>console.log(a); <span style="color:#60a0b0;font-style:italic">//3
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>console.log(b); <span style="color:#60a0b0;font-style:italic">//6
-</span></span></span></code></pre></div><p><strong>還可以用逗號來略過不要的值，以下為例取出陣列第三個值</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> list <span style="color:#666">=</span> [<span style="color:#40a070">3</span>, <span style="color:#40a070">6</span>, <span style="color:#40a070">9</span>];
-</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> [, , c] <span style="color:#666">=</span> list;
-</span></span><span style="display:flex;"><span>console.log(c); <span style="color:#60a0b0;font-style:italic">//9
-</span></span></span></code></pre></div><p><strong>如果我想把 list 分為 2 個陣列，以下為例可以用&hellip;的方式</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> list <span style="color:#666">=</span> [<span style="color:#40a070">3</span>, <span style="color:#40a070">6</span>, <span style="color:#40a070">9</span>];
-</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> [a, ...b] <span style="color:#666">=</span> list;
-</span></span><span style="display:flex;"><span>console.log(a); <span style="color:#60a0b0;font-style:italic">//3
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>console.log(b); <span style="color:#60a0b0;font-style:italic">//[6,9]
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> [White] <span style="color:#666">=</span> [<span style="color:#4070a0">&#34;Lily&#34;</span>, <span style="color:#4070a0">&#34;Rose&#34;</span>, <span style="color:#4070a0">&#34;Sunflower&#34;</span>];
+</span></span><span style="display:flex;"><span>console.log(White); <span style="color:#60a0b0;font-style:italic">//Lily
+</span></span></span></code></pre></div><p><strong>還可以用逗號來略過不要的值，逗點位置需注意</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> [, Yellow] <span style="color:#666">=</span> [<span style="color:#4070a0">&#34;Lily&#34;</span>, <span style="color:#4070a0">&#34;Rose&#34;</span>, <span style="color:#4070a0">&#34;Sunflower&#34;</span>];
+</span></span><span style="display:flex;"><span>console.log(Yellow); <span style="color:#60a0b0;font-style:italic">//Rose
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> [ , , Yellow] <span style="color:#666">=</span> <span style="color:#666">=</span> [<span style="color:#4070a0">&#34;Lily&#34;</span>, <span style="color:#4070a0">&#34;Rose&#34;</span>, <span style="color:#4070a0">&#34;Sunflower&#34;</span>];
+</span></span><span style="display:flex;"><span>console.log(Yellow); <span style="color:#60a0b0;font-style:italic">//Sunflower
+</span></span></span></code></pre></div><p><strong>用&hellip;可以將陣列再分陣列</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> [White, ...Red] <span style="color:#666">=</span> [<span style="color:#4070a0">&#34;Lily&#34;</span>, <span style="color:#4070a0">&#34;Rose&#34;</span>, <span style="color:#4070a0">&#34;Peony&#34;</span>];
+</span></span><span style="display:flex;"><span>console.log(White, Red); <span style="color:#60a0b0;font-style:italic">//Lily [ &#39;Rose&#39;, &#39;Peony&#39; ]
 </span></span></span></code></pre></div></li>
 <li>
 <h5 id="物件解構">物件解構</h5>
-<p><strong>把名為 obj 的物件拆解後指定給另一個{age,power}常數，因為{age,power}常數與裡面有同名的 key，所以可以直接把資料印出來</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> obj <span style="color:#666">=</span> {
-</span></span><span style="display:flex;"><span>  power<span style="color:#666">:</span> <span style="color:#40a070">100</span>,
-</span></span><span style="display:flex;"><span>  age<span style="color:#666">:</span> <span style="color:#40a070">18</span>,
+<p><strong>我有一個 flowers 物件具有三個鍵值，但我只要其中的 Lily 和 Rose</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> flowers <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  Lily<span style="color:#666">:</span> <span style="color:#4070a0">&#34;White&#34;</span>,
+</span></span><span style="display:flex;"><span>  Rose<span style="color:#666">:</span> <span style="color:#4070a0">&#34;Red&#34;</span>,
+</span></span><span style="display:flex;"><span>  Sunflower<span style="color:#666">:</span> <span style="color:#4070a0">&#34;Yellow&#34;</span>,
 </span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> { age, power } <span style="color:#666">=</span> obj;
-</span></span><span style="display:flex;"><span>console.log(power); <span style="color:#60a0b0;font-style:italic">//100
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>console.log(age); <span style="color:#60a0b0;font-style:italic">//18
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> { Lily, Rose } <span style="color:#666">=</span> flowers;
+</span></span><span style="display:flex;"><span>console.log(Lily, Rose); <span style="color:#60a0b0;font-style:italic">//White Red
 </span></span></span></code></pre></div><p><strong>可以將物件當作函式的參數提取某屬性的值</strong></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> bmi(someone) {
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">const</span> { height, weight } <span style="color:#666">=</span> someone; <span style="color:#60a0b0;font-style:italic">//解構
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  console.log(height); <span style="color:#60a0b0;font-style:italic">// 170,180
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  console.log(weight); <span style="color:#60a0b0;font-style:italic">//70,88
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  console.log(height); <span style="color:#60a0b0;font-style:italic">// 170
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>  console.log(weight); <span style="color:#60a0b0;font-style:italic">//70
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
-</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> lily <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> Bill <span style="color:#666">=</span> {
 </span></span><span style="display:flex;"><span>  height<span style="color:#666">:</span> <span style="color:#40a070">170</span>,
 </span></span><span style="display:flex;"><span>  weight<span style="color:#666">:</span> <span style="color:#40a070">70</span>,
-</span></span><span style="display:flex;"><span>  power<span style="color:#666">:</span> <span style="color:#40a070">100</span>,
 </span></span><span style="display:flex;"><span>  age<span style="color:#666">:</span> <span style="color:#40a070">20</span>,
 </span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> powl <span style="color:#666">=</span> {
-</span></span><span style="display:flex;"><span>  height<span style="color:#666">:</span> <span style="color:#40a070">180</span>,
-</span></span><span style="display:flex;"><span>  weight<span style="color:#666">:</span> <span style="color:#40a070">88</span>,
-</span></span><span style="display:flex;"><span>  power<span style="color:#666">:</span> <span style="color:#40a070">100</span>,
-</span></span><span style="display:flex;"><span>  age<span style="color:#666">:</span> <span style="color:#40a070">40</span>,
+</span></span><span style="display:flex;"><span>bmi(Bill);
+</span></span></code></pre></div><p><strong>還可以再更簡化</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> bmi({ height, weight }) {
+</span></span><span style="display:flex;"><span>  console.log(height, weight); <span style="color:#60a0b0;font-style:italic">// 170 70
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> Bill <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  height<span style="color:#666">:</span> <span style="color:#40a070">170</span>,
+</span></span><span style="display:flex;"><span>  weight<span style="color:#666">:</span> <span style="color:#40a070">70</span>,
+</span></span><span style="display:flex;"><span>  age<span style="color:#666">:</span> <span style="color:#40a070">20</span>,
 </span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span>bmi(lily);
-</span></span><span style="display:flex;"><span>bmi(powl);
+</span></span><span style="display:flex;"><span>bmi(Bill);
+</span></span></code></pre></div><p><strong>也可以處理物件巢狀結構，使用雙重大括號{}以及冒號:將函式的參數修改如下：</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> bmi({ name<span style="color:#666">:</span> { firstname } }) {
+</span></span><span style="display:flex;"><span>  console.log(firstname); <span style="color:#60a0b0;font-style:italic">//Bill
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> person <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  name<span style="color:#666">:</span> {
+</span></span><span style="display:flex;"><span>    firstname<span style="color:#666">:</span> <span style="color:#4070a0">&#34;Bill&#34;</span>,
+</span></span><span style="display:flex;"><span>    lastname<span style="color:#666">:</span> <span style="color:#4070a0">&#34;Wilson&#34;</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  height<span style="color:#666">:</span> <span style="color:#40a070">170</span>,
+</span></span><span style="display:flex;"><span>  weight<span style="color:#666">:</span> <span style="color:#40a070">70</span>,
+</span></span><span style="display:flex;"><span>  age<span style="color:#666">:</span> <span style="color:#40a070">20</span>,
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>bmi(person);
 </span></span></code></pre></div></li>
 </ol>
 

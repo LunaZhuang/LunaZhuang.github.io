@@ -14,7 +14,7 @@
       
       <guid>https://LunaZhuang.github.io/blog/js-destructuring-assignment/</guid>
       <description>解構賦值是什麼？ 解構賦值 (Destructuring assignment) 語法是一種 JavaScript 運算式，用以拆解物件與陣列中的資料成為獨立變數。
-使用方式 陣列解構 用新的陣列變數[a, b, c] 將 list 陣列裡的值分別指派給 a、b、c 變數，此時 a = 3, b = 6, c = 9。</description>
+使用方式 陣列解構 用新的陣列變數[White, Red, Yellow] 將 flowers 陣列裡的值分別指派給 White、Red、Yellow 變數，此時 White = Lily, Red = Rose, Yellow = Sunflower。</description>
     </item>
     
     <item>
@@ -272,52 +272,6 @@ module Flyable #定義 def fly puts &amp;#34;fly&amp;#34; end end class Cat incl
 １就是１，２就是２
 符號 ：name ，就是：name 不是變數不可以改變他的值
 字串 name=&amp;quot;amber&amp;quot;，name 變數指向一個字串，並可以改變字串內容</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://LunaZhuang.github.io/blog/30%E5%A4%A9%E5%AD%B8react-01/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://LunaZhuang.github.io/blog/30%E5%A4%A9%E5%AD%B8react-01/</guid>
-      <description>為什麼要寫這個主題？
-我是剛接觸前端程式沒多久的菜鳥，在學完基本的 HTML、CSS、JavaScript 後，因為現在業界大部分都有在用前端框架，所以就想了解更多，就選擇 React 作為我第一個學習的前端框架，我目前的學習是以這本 React 「學習手冊-第二版-建構現代的 React 應用」為大綱，協助我可以更好的學習 React，以及該如何在網路搜尋與篩選資料，藉由寫文章的方式，希望可以內化為自己的東西，也因為我剛接觸程式沒多久，有些 JavaScript 的語法及方法運用的不是很好，這本書的一些內容對我這個 React 全然的新手來說，可以讓我更了解 React。</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://LunaZhuang.github.io/blog/30%E5%A4%A9%E5%AD%B8react-02/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://LunaZhuang.github.io/blog/30%E5%A4%A9%E5%AD%B8react-02/</guid>
-      <description>寫解構？ 為什麼要寫 在React中會常用到的js語法很重要 再開始 React 前，</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://LunaZhuang.github.io/blog/30%E5%A4%A9%E5%AD%B8react-03/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://LunaZhuang.github.io/blog/30%E5%A4%A9%E5%AD%B8react-03/</guid>
-      <description>延展運算子</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://LunaZhuang.github.io/blog/30%E5%A4%A9%E5%AD%B8react-04/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://LunaZhuang.github.io/blog/30%E5%A4%A9%E5%AD%B8react-04/</guid>
-      <description>非同步的 js fetch 與 async、await</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://LunaZhuang.github.io/blog/30%E5%A4%A9%E5%AD%B8react-05/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://LunaZhuang.github.io/blog/30%E5%A4%A9%E5%AD%B8react-05/</guid>
-      <description>模組是什麼？</description>
     </item>
     
   </channel>
