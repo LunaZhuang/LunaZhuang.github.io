@@ -8,6 +8,17 @@
     <language>zh-tw</language>
     <lastBuildDate>Tue, 29 Oct 2019 13:49:23 +0600</lastBuildDate><atom:link href="https://LunaZhuang.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>JavaScript-物件語法強化</title>
+      <link>https://LunaZhuang.github.io/blog/js-objectliteralenhancement/</link>
+      <pubDate>Sat, 20 Aug 2022 11:50:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/js-objectliteralenhancement/</guid>
+      <description>物件語法強化 可以將變數重組為物件
+下列程式碼 Lilium 物件內的變數與上面變數有相同的名稱，所以會將相同變數名稱的值帶進物件裡。
+const name = &amp;#34;Robert&amp;#34;; const height = 272; const person = { name, height }; console.</description>
+    </item>
+    
+    <item>
       <title>JavaScript-解構賦值</title>
       <link>https://LunaZhuang.github.io/blog/js-destructuring-assignment/</link>
       <pubDate>Wed, 17 Aug 2022 22:30:00 +0800</pubDate>
