@@ -8,6 +8,17 @@
     <language>zh-tw</language>
     <lastBuildDate>Tue, 29 Oct 2019 13:49:23 +0600</lastBuildDate><atom:link href="https://LunaZhuang.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>JavaScript-延展運算子</title>
+      <link>https://LunaZhuang.github.io/blog/js-spreadopeartor/</link>
+      <pubDate>Sun, 21 Aug 2022 10:30:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/js-spreadopeartor/</guid>
+      <description>延展運算子 延展運算子由三個點(&amp;hellip;)組成，具備多種功能。
+首先延展運算子的其中一個功能，可以協助我們結合兩個陣列，產生一個新陣列，跟 JavaScript 的陣列方法 concat 一樣。 用延展運算子：
+const flowers = [&amp;#34;Lily&amp;#34;, &amp;#34;Rose&amp;#34;, &amp;#34;Sunflower&amp;#34;]; const plant = [&amp;#34;cactus&amp;#34;, &amp;#34;Snake Plant&amp;#34;]; const decorate = [.</description>
+    </item>
+    
+    <item>
       <title>JavaScript-物件語法強化</title>
       <link>https://LunaZhuang.github.io/blog/js-objectliteralenhancement/</link>
       <pubDate>Sat, 20 Aug 2022 11:50:00 +0800</pubDate>
