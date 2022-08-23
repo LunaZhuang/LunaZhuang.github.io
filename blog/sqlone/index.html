@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>Luna&#39;s Blog</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="常見SQL語法(新增、刪除、搜尋)">
+  <meta name="author" content="Luna">
+  <meta name="generator" content="Hugo 0.100.2" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/venobox/venobox.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/scss/style.min.css" media="screen">
+
+  <!-- Favicon -->
+<link rel="shortcut icon" href="https://LunaZhuang.github.io/images/favicon.png " type="image/x-icon">
+<link rel="icon" href="https://LunaZhuang.github.io/images/favicon.png " type="image/x-icon">
+
+  <!-- google analitycs -->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-231593772-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom ">
+      <a class="navbar-brand " href="https://LunaZhuang.github.io">
+        <img class=""
+          src="https://LunaZhuang.github.io/images/icon.png" alt="Luna&#39;s Blog"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        
+
+        
+
+        <ul class="navbar-nav ml-auto">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://LunaZhuang.github.io/">Home</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://LunaZhuang.github.io/about/">About</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://LunaZhuang.github.io/search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <h3 class="text-center">SQL語法(上）</h3>
+        <div class="mb-3 post-meta text-center">
+          <span>By Luna</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>23 August 2022</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          
+        <a href="/categories/%e5%85%b6%e4%bb%96%e5%ad%b8%e7%bf%92"
+          class="text-primary">其他學習</a>
+        
+        </div>
+        <div class="mt-1" style="border-top: 3px solid #dee2e6; height: 1rem;"></div>
+       
+       
+        
+        <div class="content mb-5">
+          <h4 id="什麼是-sql-語法">什麼是 SQL 語法？</h4>
+<p>用來操作資料庫的語法，不管你是在 Web 應用程式的開發或是資料分析（Data Analytics）都有可能用得上。</p>
+<h4 id="關聯式資料庫-rdbms">關聯式資料庫 RDBMS</h4>
+<p>每個資料表間可以有關聯性。市面上常見的資料庫種類有：</p>
+<ul>
+<li>Oracle</li>
+<li>MSSQL</li>
+<li>MySQL</li>
+<li>PostgreSQL</li>
+<li>SQLite</li>
+</ul>
+<h4 id="sqlsql92-標準-語法">SQL(SQL92 標準) 語法</h4>
+<p>以下語法主要是以可以通用在各個資料庫使用。SQL 主要是以 keyword 關鍵字和資料表（table）名稱和欄位（column）名稱當作一段完整的語句。SQL 語法使用分號 ; 當作結尾，英文字母不區分大小寫，但關鍵字通常用大寫比較容易區分，單字間使用空白分隔。單行註解寫法 &ndash;，多行註解使用 /**/ 包裹。</p>
+<p>像是 MySQL、PostgreSQL 本身是伺服器所以可以開很多個資料庫，每個資料庫裡又可以開很多個資料表，而 SQLite 本身是一個資料庫，故不能再新增資料庫。</p>
+<h5 id="新增的語法">新增的語法</h5>
+<p>新增資料庫：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">DATABASE</span><span style="color:#bbb"> </span>hello(<span style="">資料庫名稱</span>);<span style="color:#bbb">
+</span></span></span></code></pre></div><p>新增資料表語法：
+<img src="/images/sql.png" alt="">
+從圖形化介面可對應下方 sql 語法</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">TABLE</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;資料表名稱&#34;</span><span style="color:#bbb"> </span>(<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#4070a0">&#34;id&#34;</span><span style="color:#bbb">	</span><span style="color:#007020">INTEGER</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">NOT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">NULL</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#4070a0">&#34;Field2&#34;</span><span style="color:#bbb">	</span><span style="color:#007020">TEXT</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#4070a0">&#34;Field3&#34;</span><span style="color:#bbb">	</span><span style="color:#007020">INTEGER</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>);<span style="color:#bbb">
+</span></span></span></code></pre></div><p>新增資料表內欄位：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">ALTER</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">TABLE</span><span style="color:#bbb"> </span><span style="">資料表名稱</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">ADD</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">COLUMN</span><span style="color:#bbb"> </span>super_power<span style="color:#bbb"> </span><span style="color:#007020">VARCHAR</span>(<span style="color:#40a070">10</span>);<span style="color:#bbb">
+</span></span></span></code></pre></div><h5 id="刪除的語法">刪除的語法</h5>
+<p>刪除資料庫語法：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DROP</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">DATABASE</span><span style="color:#bbb"> </span>hello(<span style="">資料庫名稱</span>);<span style="color:#bbb">
+</span></span></span></code></pre></div><p>刪除資料表語法：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DROP</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">TABLE</span><span style="color:#bbb"> </span>hello(<span style="">資料表名稱</span>)<span style="color:#bbb"> </span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>刪除資料表內欄位：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">ALTER</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">TABLE</span><span style="color:#bbb"> </span><span style="">資料表名稱</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">DROP</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">COLUMN</span><span style="color:#bbb"> </span>super_power;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>刪除資料表內的所有內容，資料表還在：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DELETE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>heroes;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>刪除資料表內特定資料：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DELETE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>heroes<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>hero_level<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;A&#34;</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><h5 id="查詢語法">查詢語法</h5>
+<p>等等會看到下方程式碼很多次，是查詢時必要的前綴。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="">查詢欄位</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb">  </span><span style="">資料表名稱</span><span style="color:#bbb"> </span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>下方這段的意思是我要 heroes 資料表的所有欄位＊。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#666">*</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb">  </span>heroes<span style="color:#bbb"> </span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>可配合挑件來篩選，意思是我只要 heroes 這個資料表， hero_level 這個欄位裡面的值等於 &ldquo;S&quot;的資料，並把所以的欄位選出來。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#666">*</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>heroes<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>hero_level<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;S&#34;</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p><img src="/images/sql2.png" alt=""></p>
+<p>可以用 AND 來新增條件</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#666">*</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>heroes<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>hero_level<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;S&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">AND</span><span style="color:#bbb"> </span>gender<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;F&#34;</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p><img src="/images/sql3.png" alt=""></p>
+<p>當我資料庫裡有大的檔案而又沒有要這個欄位時，如果全選就有可能會跑很慢，這時可以只顯示特定欄位更改如下：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb">  </span>name,age<span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>heroes<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>hero_level<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;S&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">AND</span><span style="color:#bbb"> </span>gender<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;F&#34;</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p><img src="/images/sql4.png" alt=""></p>
+<p>當想要挑選空值時，可以用 NULL 來篩選：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb">  </span>name,age<span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>heroes<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>age<span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">is</span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">NULL</span><span style="color:#bbb"> </span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>當想要搜尋 name 欄位裡有出現背心的文字，前後方都可以有字，可以使用 like 關鍵字配合％來搜尋</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb">  </span><span style="color:#666">*</span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>heroes<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb">  </span>name<span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">like</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;%背心%&#34;</span><span style="color:#bbb"> </span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p><img src="/images/sql5.png" alt=""></p>
+<p>當要搜尋 age 欄位裡年齡範圍介在 10~25 可以使用 BETWEEN 和 AND:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb">  </span><span style="color:#666">*</span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>heroes<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb">   </span>age<span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">BETWEEN</span><span style="color:#bbb"> </span><span style="color:#40a070">10</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">AND</span><span style="color:#bbb">  </span><span style="color:#40a070">25</span><span style="color:#bbb">
+</span></span></span></code></pre></div><p>列出 hero_level 欄位內的值為&quot;S&quot;或&quot;A&rdquo;，使用 OR 與 in 的結果會一樣：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb">  </span><span style="color:#666">*</span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>heroes<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb">  </span>hero_level<span style="color:#bbb">  </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;S&#34;</span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">OR</span><span style="color:#bbb">  </span>hero_level<span style="color:#bbb">  </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;A&#34;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb">  </span><span style="color:#666">*</span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>heroes<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb">  </span>hero_level<span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">in</span><span style="color:#bbb"> </span>(<span style="color:#4070a0">&#34;S&#34;</span>,<span style="color:#4070a0">&#34;A&#34;</span>);<span style="color:#bbb">
+</span></span></span></code></pre></div><p>不要 hero_level 欄位內的值為&quot;S&quot;的，可以使用!=、NOT、&lt;&gt;語法：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb">  </span><span style="color:#666">*</span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>heroes<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb">  </span>hero_level<span style="color:#bbb"> </span><span style="color:#666">!=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;S&#34;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb">  </span><span style="color:#666">*</span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>heroes<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">NOT</span><span style="color:#bbb"> </span>hero_level<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#4070a0">&#34;S&#34;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb">  </span><span style="color:#666">*</span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>heroes<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>hero_level<span style="color:#666">&lt;&gt;</span><span style="color:#4070a0">&#34;S&#34;</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>挑選出 hero_level 欄位不包含&quot;A&quot;和&quot;S&quot;的資料，可將 in 與 NOT 結合：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb">  </span><span style="color:#666">*</span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>heroes<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb">  </span>hero_level<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">NOT</span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">in</span><span style="color:#bbb"> </span>(<span style="color:#4070a0">&#34;S&#34;</span>,<span style="color:#4070a0">&#34;A&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb">  </span><span style="color:#666">*</span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>heroes<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">NOT</span><span style="color:#bbb">   </span>hero_level<span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">in</span><span style="color:#bbb"> </span>(<span style="color:#4070a0">&#34;S&#34;</span>,<span style="color:#4070a0">&#34;A&#34;</span>);<span style="color:#bbb">
+</span></span></span></code></pre></div><p>本篇為基礎資料庫操作，下篇介紹如何更新資料、計算、排序與其他資料表進行關聯性。</p>
+<p><a href="../sqlTwo">SQL 語法(下）</a></p>
+
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "lunas-blog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<script>
+  var indexURL = "https://LunaZhuang.github.io/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://LunaZhuang.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/search/mark.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://LunaZhuang.github.io/js/script.min.js"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+</body>
+</html>

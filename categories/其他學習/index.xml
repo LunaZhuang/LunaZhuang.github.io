@@ -6,7 +6,17 @@
     <description>Recent content in 其他學習 on Luna&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 13 Aug 2022 13:20:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/categories/%E5%85%B6%E4%BB%96%E5%AD%B8%E7%BF%92/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Aug 2022 17:09:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/categories/%E5%85%B6%E4%BB%96%E5%AD%B8%E7%BF%92/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL語法(上）</title>
+      <link>https://LunaZhuang.github.io/blog/sqlone/</link>
+      <pubDate>Tue, 23 Aug 2022 17:09:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/sqlone/</guid>
+      <description>什麼是 SQL 語法？ 用來操作資料庫的語法，不管你是在 Web 應用程式的開發或是資料分析（Data Analytics）都有可能用得上。
+關聯式資料庫 RDBMS 每個資料表間可以有關聯性。市面上常見的資料庫種類有：</description>
+    </item>
+    
     <item>
       <title>安裝Tailwindcss</title>
       <link>https://LunaZhuang.github.io/blog/tailwind/</link>

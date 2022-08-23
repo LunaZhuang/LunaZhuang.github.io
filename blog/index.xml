@@ -8,6 +8,16 @@
     <language>zh-tw</language>
     <lastBuildDate>Tue, 29 Oct 2019 13:49:23 +0600</lastBuildDate><atom:link href="https://LunaZhuang.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>SQL語法(上）</title>
+      <link>https://LunaZhuang.github.io/blog/sqlone/</link>
+      <pubDate>Tue, 23 Aug 2022 17:09:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/sqlone/</guid>
+      <description>什麼是 SQL 語法？ 用來操作資料庫的語法，不管你是在 Web 應用程式的開發或是資料分析（Data Analytics）都有可能用得上。
+關聯式資料庫 RDBMS 每個資料表間可以有關聯性。市面上常見的資料庫種類有：</description>
+    </item>
+    
+    <item>
       <title>JavaScript-延展運算子</title>
       <link>https://LunaZhuang.github.io/blog/js-spreadopeartor/</link>
       <pubDate>Sun, 21 Aug 2022 10:30:00 +0800</pubDate>
