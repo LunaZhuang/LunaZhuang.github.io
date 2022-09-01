@@ -6,7 +6,18 @@
     <description>Recent content in 其他學習 on Luna&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 25 Aug 2022 23:16:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/categories/%E5%85%B6%E4%BB%96%E5%AD%B8%E7%BF%92/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Sep 2022 09:16:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/categories/%E5%85%B6%E4%BB%96%E5%AD%B8%E7%BF%92/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>QueryString（查詢字串）</title>
+      <link>https://LunaZhuang.github.io/blog/querystring/</link>
+      <pubDate>Thu, 01 Sep 2022 09:16:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/querystring/</guid>
+      <description>QueryString（查詢字串）是什麼？ Querystring（查詢字串）是附加在網頁 URL 結尾的資訊。主要是在 Url 上傳遞資料，可能是一個搜尋字串、頁碼、某項特定的指標等等的東西。
+在網址結尾加上一個問號（？）開始，每一組參數都是用「＆」區隔開來，用等於(=)將名稱(KEY )與值 (Value)組合在一起。
+以下方的圖為例，在 Google 首頁搜尋引擎輸入欲查詢的文字，在按下搜尋按鈕，會導頁到查詢結果頁面，並將符合搜尋字串相關資料呈現出來。</description>
+    </item>
+    
     <item>
       <title>SQL語法(下）</title>
       <link>https://LunaZhuang.github.io/blog/sqltwo/</link>
