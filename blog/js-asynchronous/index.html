@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>Luna&#39;s Blog</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="現在許多 Web API 功能都是使用非同步程式碼的做法，特別是那些要從外部裝置存取或抓取某些種類資源的功能，像是從網路抓取檔案、存取資料庫並回傳資料、從網路攝影機取得視訊串流等等。">
+  <meta name="author" content="Luna">
+  <meta name="generator" content="Hugo 0.100.2" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/venobox/venobox.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/scss/style.min.css" media="screen">
+
+  <!-- Favicon -->
+<link rel="shortcut icon" href="https://LunaZhuang.github.io/images/favicon.png " type="image/x-icon">
+<link rel="icon" href="https://LunaZhuang.github.io/images/favicon.png " type="image/x-icon">
+
+  <!-- google analitycs -->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-231593772-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom ">
+      <a class="navbar-brand " href="https://LunaZhuang.github.io">
+        <img class=""
+          src="https://LunaZhuang.github.io/images/icon.png" alt="Luna&#39;s Blog"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        
+
+        
+
+        <ul class="navbar-nav ml-auto">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://LunaZhuang.github.io/">Home</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://LunaZhuang.github.io/about/">About</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://LunaZhuang.github.io/search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <h3 class="text-center">JavaScript-非同步(Asynchronous)與同步(Synchronous)的差異</h3>
+        <div class="mb-3 post-meta text-center">
+          <span>By Luna</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>04 September 2022</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          
+        <a href="/categories/js%e5%ad%b8%e7%bf%92"
+          class="text-primary">Js學習</a>
+        
+        </div>
+        <div class="mt-1" style="border-top: 3px solid #dee2e6; height: 1rem;"></div>
+       
+       
+        
+        <div class="content mb-5">
+          <h4 id="非同步">非同步</h4>
+<p>在了解非同步之前先大概知道所謂的同步 JavaScript 是什麼，當跑一段程式碼，瀏覽器會將執行結果盡快的回傳出來
+即為同步。舉例如下：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> header <span style="color:#666">=</span> <span style="color:#007020">document</span>.getElementById(<span style="color:#4070a0">&#34;heading&#34;</span>);
+</span></span><span style="display:flex;"><span>heading.innerHTML <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Hey!&#34;</span>;
+</span></span></code></pre></div><p>就像是在說：「嗨！請幫我找到 heading 元素；接著，將它的 innerHTML 屬性設定為 Hey」。這就是所謂的「同步」操作，當某個指令正在執行時，不會有其他的事情同時發生。</p>
+<p>用日常生活來說，你跟別人打電話時，一定是聽他說完你再接他的話，不可能同時都說話這樣你哪能知道，他說了什麼？</p>
+<p>而非同步則是像傳訊息一樣，不需要打完字還要一直等他回話，而是傳完訊息後還可以做自己的事，等看到他回完訊息後再回他。</p>
+<p>而現在許多 Web API 功能都是使用非同步程式碼的做法，特別是那些要從外部裝置存取或抓取某些種類資源的功能，像是從網路抓取檔案、存取資料庫並回傳資料、從網路攝影機取得視訊串流等等。</p>
+<p>在 ES2016 起新增了一個叫做 Promise 的特殊物件。
+這一個 Promise 用來表示一個完成或失敗的非同步操作的物件。它代表的是一種中間的狀態。本質上，它代表瀏覽器述說著：「我承諾我會盡快給予你一個答覆」，因此名稱就叫做「 Promise 」。</p>
+<p>下面範例使用 YouBike2.0 臺北市公共自行車即時資訊https://data.gov.tw/dataset/137993，提供的Api資料：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>console.log(
+</span></span><span style="display:flex;"><span>  fetch(
+</span></span><span style="display:flex;"><span>    <span style="color:#4070a0">&#34;https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json&#34;</span>
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><p>點開瀏覽器會看到一個等待中的 Promise 物件，Promise 物件有三個狀態：等待中、完成、與失敗，如圖：</p>
+<p><img src="/images/promise.png" alt=""></p>
+<p>等待中的 Promise 物件代表資料尚未取得的狀態，接著在 fetch() 的結束會鏈結三個程式區塊：</p>
+<ul>
+<li>兩個 then() 區塊。兩個都含有回呼函式且先前的操作成功時就會執行，每一個回呼函式都會收到上一個成功完成操作的結果，因此你可以繼續執行一些事情。每一個 .then() 區塊都會回傳另一個 promise ，代表你可以將多個 .then() 區塊彼此作連結，所以多個非同步操作可以一個接著一個被用來依序執行。</li>
+<li>如果任何一個 .then() 區塊失敗就會跑到 catch()，在 catch() 內部會提供一個失敗的物件，可以用來報告是發生甚麼類型的錯誤。</li>
+</ul>
+<p>以下列程式碼為例，我們透過 fetch 函式取得資料，得到回應後，則將得到的資料轉 JSON 格式，再將轉換後的結果 console 出來會看到下圖：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>fetch(
+</span></span><span style="display:flex;"><span>  <span style="color:#4070a0">&#34;https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>  .then((resp) =&gt; resp.json())
+</span></span><span style="display:flex;"><span>  .then((sites) =&gt; {
+</span></span><span style="display:flex;"><span>    console.log(sites);
+</span></span><span style="display:flex;"><span>  })
+</span></span><span style="display:flex;"><span>  .<span style="color:#007020;font-weight:bold">catch</span>((err) =&gt; {
+</span></span><span style="display:flex;"><span>    console.log(err);
+</span></span><span style="display:flex;"><span>  });
+</span></span></code></pre></div><p><img src="/images/promise2.png" alt=""></p>
+<p>從上圖可以看到陣列裡包了很多個物件，物件裡都是每筆站點資訊，此時確定拿到資料後，就可以對該資料做處理。</p>
+<p>另一個常見的處理 Promise 物件的手法是使用<strong>非同步函式</strong>，與前一個例子不太一樣的地方在於，非同步函式會自動等待 Promise 物件解析，接著才往下傳，而.then()會串接多個回呼函式作為處理器。</p>
+<p>資料一樣使用 YouBike，可以看到在使用前要先宣告 async，在 Promise 物件解析前要使用 await 關鍵字，這會使函式暫停與此，直到 Promise 物件解析之後才開始往下進行。得到的結果與.then()相同。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> getYouBike <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">async</span> () =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">try</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">let</span> resp <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">await</span> fetch(
+</span></span><span style="display:flex;"><span>      <span style="color:#4070a0">&#34;https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json&#34;</span>
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">let</span> sites <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">await</span> resp.json();
+</span></span><span style="display:flex;"><span>    console.log(sites);
+</span></span><span style="display:flex;"><span>  } <span style="color:#007020;font-weight:bold">catch</span> (err) {
+</span></span><span style="display:flex;"><span>    console.log(err);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>getYouBike();
+</span></span></code></pre></div><p>想了解 JavaScript 非同步與-Event Loop 怎麼運作，可以看這篇文<a href="../js-eventloop">JavaScript-Event Loop</a></p>
+
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "lunas-blog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<script>
+  var indexURL = "https://LunaZhuang.github.io/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://LunaZhuang.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/search/mark.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://LunaZhuang.github.io/js/script.min.js"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+</body>
+</html>
