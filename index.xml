@@ -6,7 +6,18 @@
     <description>Recent content on Luna&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 04 Sep 2022 21:30:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Sep 2022 21:30:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>React- 在開始使用React要了解的事之一「模組」</title>
+      <link>https://LunaZhuang.github.io/blog/react-module/</link>
+      <pubDate>Fri, 09 Sep 2022 21:30:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/react-module/</guid>
+      <description>使用 React 前須知道，何謂模組 在 React 裡很強調模組化，把功能細分成一個個模組，再把它們匯入至上層模組組合起來，所以不同模組間也不容易出現衝突，當其中一個模組出錯也不影響到其他模組。
+模組意思：
+模組是一段可重複使用的程式碼，他可以輕鬆地被整合進既有的程式，而不產生變數的命名衝突，JavaScript 的模組會被整合成獨立的檔案，ES6 的模組系統使用上相當簡單，各模組有自己的獨立的作用域，所以你必須指示要在應用程式中匯入或輸出哪一些模組。</description>
+    </item>
+    
     <item>
       <title>JavaScript-非同步(Asynchronous)與同步(Synchronous)的差異</title>
       <link>https://LunaZhuang.github.io/blog/js-asynchronous/</link>
