@@ -6,7 +6,17 @@
     <description>Recent content on Luna&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 09 Sep 2022 21:30:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Sep 2022 23:00:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>React-在開始使用React要了解的事之二「函式導向程式設計」</title>
+      <link>https://LunaZhuang.github.io/blog/react-functionalprogramming/</link>
+      <pubDate>Sat, 10 Sep 2022 23:00:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/react-functionalprogramming/</guid>
+      <description>函式導向程式設計 函式導向程式設計與 JavaScript。 學習 React 不可避免地要接觸所謂的函式導向程式設計，畢竟函式編程只是一種程式設計方法，只要程式語言本身可以符合函式編程的基本概念，就可以宣稱用函式編程來開發程式。今天學習的是何謂函式導向。
+何謂函式導向： JavaScript 雖然是物件導向，但也支援函式導向程式設計，因為函式在 JavaScript 中是「一級成員」，這就意味著函式具有變數的特質。在近年 JavaScript 完善了對函式導向的支援，包括了箭頭函式、Promise 物件及延展運算子。</description>
+    </item>
+    
     <item>
       <title>React- 在開始使用React要了解的事之一「模組」</title>
       <link>https://LunaZhuang.github.io/blog/react-module/</link>
