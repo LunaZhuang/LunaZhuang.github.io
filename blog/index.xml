@@ -8,6 +8,16 @@
     <language>zh-tw</language>
     <lastBuildDate>Tue, 29 Oct 2019 13:49:23 +0600</lastBuildDate><atom:link href="https://LunaZhuang.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>React-在開始使用React要了解的事之三「宣告式程式設計」</title>
+      <link>https://LunaZhuang.github.io/blog/react-declarative/</link>
+      <pubDate>Sun, 11 Sep 2022 21:45:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/react-declarative/</guid>
+      <description>宣告式 vs 命令式的差別 接續上篇的函式導向程式設計，函式導向是屬於宣告式程式設計的一個分支。
+宣告式程式設計：它們建造電腦程式的結構和元素，表達計算的邏輯而不用描述它的控制流程。 命令式程式設計：最大的特點是其每行代碼都是一條具體的指令，讓計算機執行具體的操作，通過一系列指令的疊加完成複雜的任務。 差異在於宣告式注重於表達「該做何事(What)」，而命令式則是「如何達成(How)」。 舉例說明： 下列這段程式碼，我要讓陣列裡的每個元素乘於 2，並返回新陣列，所以用 for 迴圈逐一檢查陣列中的元素，並預設一個空陣列把乘好的數字加進新陣列裡，這就是命令式風格關注的重點在於程式該如何達成這個目的，然而當程式碼出現一堆 for、if 等邏輯，通常不太容易了解程式的目的，因此命令式風格必須仰賴大量的註解，才能較好的維護。</description>
+    </item>
+    
+    <item>
       <title>React-在開始使用React要了解的事之二「函式導向程式設計」</title>
       <link>https://LunaZhuang.github.io/blog/react-functionalprogramming/</link>
       <pubDate>Sat, 10 Sep 2022 23:00:00 +0800</pubDate>
