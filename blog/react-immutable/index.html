@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>Luna&#39;s Blog</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="函式的概念包含了：不可變性、純函式、資料變形、高階函式以及遞迴">
+  <meta name="author" content="Luna">
+  <meta name="generator" content="Hugo 0.100.2" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/venobox/venobox.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/scss/style.min.css" media="screen">
+
+  <!-- Favicon -->
+<link rel="shortcut icon" href="https://LunaZhuang.github.io/images/favicon.png " type="image/x-icon">
+<link rel="icon" href="https://LunaZhuang.github.io/images/favicon.png " type="image/x-icon">
+
+  <!-- google analitycs -->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-231593772-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom ">
+      <a class="navbar-brand " href="https://LunaZhuang.github.io">
+        <img class=""
+          src="https://LunaZhuang.github.io/images/icon.png" alt="Luna&#39;s Blog"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        
+
+        
+
+        <ul class="navbar-nav ml-auto">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://LunaZhuang.github.io/">Home</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://LunaZhuang.github.io/about/">About</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://LunaZhuang.github.io/search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <h3 class="text-center">React-在開始使用React要了解的事之四「不可變性」</h3>
+        <div class="mb-3 post-meta text-center">
+          <span>By Luna</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>18 September 2022</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          
+        <a href="/categories/react%e5%ad%b8%e7%bf%92"
+          class="text-primary">React學習</a>
+        
+        </div>
+        <div class="mt-1" style="border-top: 3px solid #dee2e6; height: 1rem;"></div>
+       
+       
+        
+        <div class="content mb-5">
+          <h4 id="何謂不可變性">何謂不可變性：</h4>
+<p>&ldquo;Mutable(可變的)&ldquo;代表是可以被改變的、修改的，而&quot;Immutable(不可變的)&ldquo;則是它的反義詞，代表所有資料不可以被改變或修改的。</p>
+<p>JavaScript 並非是純粹的函式導向程式設計，在純函式導向程式設計語言中，所有的物件都是不可變的。在 JavaScript 中的設計是所有基本資料類型如 Undefined, Null, Boolean, Number, String, Symbol 是不可變的，但物件通常是可變的。但在 Array 中有些不可變的方法(意思是會回傳新的陣列，而非直接修改原陣列)，今天這篇的學習文章為不可變性，在函式導向程式設計中，所有資料都是不可變動的。</p>
+<h4 id="舉例">舉例：</h4>
+<p>請想像一個情境：
+你可能因為很開心考到駕照，想要 po 到社交平台上，但不想把駕照上有你的身分證的隱私資料曝光，這時候有兩種選擇：直接在駕照上塗改拍照;或是先拍照之後在照片上修改，正常都會走第二種也比較合理，不然辛苦考到的駕照剛拿到手就毀了還要補發，第二種方式既可以保持原本的駕照完好，又可以對拍好的照片資料作修改變動。這其實就是「資料的不可變動性」的概念，我們不直接修改資料，而是修改資料副本。</p>
+<p>舉一個程式中的資料示範何謂變動資料，假設有個物件 sky 代表天空的顏色（一般來說）：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">let</span> color_sky <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  title<span style="color:#666">:</span> <span style="color:#4070a0">&#34;sky&#34;</span>,
+</span></span><span style="display:flex;"><span>  color<span style="color:#666">:</span> <span style="color:#4070a0">&#34;0000FF&#34;</span>,
+</span></span><span style="display:flex;"><span>  opacity<span style="color:#666">:</span> <span style="color:#40a070">1</span>,
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>我們接著創造了一個函式 opacityColor，用以修改顏色的不透明度.opacity:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> opacityColor(color, opacity) {
+</span></span><span style="display:flex;"><span>  color.opacity <span style="color:#666">=</span> opacity;
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> color;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>console.log(opacityColor(color_sky, <span style="color:#40a070">0.8</span>).opacity); <span style="color:#60a0b0;font-style:italic">//0.8
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>console.log(color_sky.opacity); <span style="color:#60a0b0;font-style:italic">//0.8
+</span></span></span></code></pre></div><p>在 JavaScript 中，函式接受引數會直接參照至資料本體，設定物件的屬性其實便意味著修改資料。</p>
+<p>我們可以修改 opacityColor 函式，使它不要修改到原有的資料：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> opacityColor <span style="color:#666">=</span> (color, opacity) =&gt; ({
+</span></span><span style="display:flex;"><span>  ...color,
+</span></span><span style="display:flex;"><span>  opacity,
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>console.log(opacityColor(color_sky, <span style="color:#40a070">0.8</span>).opacity); <span style="color:#60a0b0;font-style:italic">//0.8
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>console.log(color_sky.opacity); <span style="color:#60a0b0;font-style:italic">//1
+</span></span></span></code></pre></div><p>在以上程式碼中我們透過延展運算子，來幫我們複製傳入的物件，這樣就能夠不變動到原本的 color_sky 物件，再使用 opacity 覆蓋原本的屬性。
+總而言之，為了確保資料是不可變動的，我們會先複製一個副本，再針對副本做修改。</p>
+
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "lunas-blog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<script>
+  var indexURL = "https://LunaZhuang.github.io/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://LunaZhuang.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/search/mark.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://LunaZhuang.github.io/js/script.min.js"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+</body>
+</html>

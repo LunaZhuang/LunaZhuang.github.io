@@ -6,7 +6,17 @@
     <description>Recent content in React on Luna&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 11 Sep 2022 21:45:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Sep 2022 23:55:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>React-在開始使用React要了解的事之四「不可變性」</title>
+      <link>https://LunaZhuang.github.io/blog/react-immutable/</link>
+      <pubDate>Sun, 18 Sep 2022 23:55:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/react-immutable/</guid>
+      <description>何謂不可變性： &amp;ldquo;Mutable(可變的)&amp;ldquo;代表是可以被改變的、修改的，而&amp;quot;Immutable(不可變的)&amp;ldquo;則是它的反義詞，代表所有資料不可以被改變或修改的。
+JavaScript 並非是純粹的函式導向程式設計，在純函式導向程式設計語言中，所有的物件都是不可變的。在 JavaScript 中的設計是所有基本資料類型如 Undefined, Null, Boolean, Number, String, Symbol 是不可變的，但物件通常是可變的。但在 Array 中有些不可變的方法(意思是會回傳新的陣列，而非直接修改原陣列)，今天這篇的學習文章為不可變性，在函式導向程式設計中，所有資料都是不可變動的。</description>
+    </item>
+    
     <item>
       <title>React-在開始使用React要了解的事之三「宣告式程式設計」</title>
       <link>https://LunaZhuang.github.io/blog/react-declarative/</link>
