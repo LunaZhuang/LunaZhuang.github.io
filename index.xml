@@ -6,7 +6,17 @@
     <description>Recent content on Luna&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 18 Sep 2022 23:55:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Sep 2022 23:20:00 +0800</lastBuildDate><atom:link href="https://LunaZhuang.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>React-在開始使用React要了解的事之五「純函式」</title>
+      <link>https://LunaZhuang.github.io/blog/react-purefunction/</link>
+      <pubDate>Sun, 25 Sep 2022 23:20:00 +0800</pubDate>
+      
+      <guid>https://LunaZhuang.github.io/blog/react-purefunction/</guid>
+      <description>何謂純函式(Pure Function) 當一個函式的輸出結果只受輸入值影響時，意思是函式在相同的輸入值時，需產生相同的輸出，任何改變現存值的賦值（比如 x = x + 1）都是不允許的。
+純函式接受一個或一個以上的引數，必定回傳某個值或是另一個函示，而且純函式不會產生任何副作用(Side Effect)，例如：設定全域變數、修改應用程式的狀態，或是對函式外部資料的修改等等，也不會改變預期的輸出結果，因為純函示將輸入的引數視為不可變動。</description>
+    </item>
+    
     <item>
       <title>React-在開始使用React要了解的事之四「不可變性」</title>
       <link>https://LunaZhuang.github.io/blog/react-immutable/</link>

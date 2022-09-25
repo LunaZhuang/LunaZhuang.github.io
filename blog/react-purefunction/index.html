@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>Luna&#39;s Blog</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="函式的概念包含了：不可變性、純函式、資料變形、高階函式以及遞迴">
+  <meta name="author" content="Luna">
+  <meta name="generator" content="Hugo 0.100.2" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/plugins/venobox/venobox.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://LunaZhuang.github.io/scss/style.min.css" media="screen">
+
+  <!-- Favicon -->
+<link rel="shortcut icon" href="https://LunaZhuang.github.io/images/favicon.png " type="image/x-icon">
+<link rel="icon" href="https://LunaZhuang.github.io/images/favicon.png " type="image/x-icon">
+
+  <!-- google analitycs -->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-231593772-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom ">
+      <a class="navbar-brand " href="https://LunaZhuang.github.io">
+        <img class=""
+          src="https://LunaZhuang.github.io/images/icon.png" alt="Luna&#39;s Blog"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        
+
+        
+
+        <ul class="navbar-nav ml-auto">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://LunaZhuang.github.io/">Home</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://LunaZhuang.github.io/about/">About</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://LunaZhuang.github.io/search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <h3 class="text-center">React-在開始使用React要了解的事之五「純函式」</h3>
+        <div class="mb-3 post-meta text-center">
+          <span>By Luna</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>25 September 2022</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          
+        <a href="/categories/react%e5%ad%b8%e7%bf%92"
+          class="text-primary">React學習</a>
+        
+        </div>
+        <div class="mt-1" style="border-top: 3px solid #dee2e6; height: 1rem;"></div>
+       
+       
+        
+        <div class="content mb-5">
+          <h4 id="何謂純函式pure-function">何謂純函式(Pure Function)</h4>
+<p>當一個函式的輸出結果只受輸入值影響時，意思是函式在相同的輸入值時，需產生相同的輸出，任何改變現存值的賦值（比如 x = x + 1）都是不允許的。</p>
+<p>純函式接受一個或一個以上的引數，必定回傳某個值或是另一個函示，而且純函式不會產生任何副作用(Side Effect)，例如：設定全域變數、修改應用程式的狀態，或是對函式外部資料的修改等等，也不會改變預期的輸出結果，因為純函示將輸入的引數視為不可變動。</p>
+<h4 id="舉例">舉例：</h4>
+<p>在下方的範例中，有一個名為 addNew 的變數，它是在 add() 函式之外宣告的。但是該變數的狀態在 add() 函式內部又改變了。因此，add() 函式對超出其範圍的變數有副作用，因此被視為不純函數。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> addNew <span style="color:#666">=</span> <span style="color:#40a070">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> add(a, b) {
+</span></span><span style="display:flex;"><span>  addNew <span style="color:#666">=</span> <span style="color:#40a070">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> a <span style="color:#666">+</span> b <span style="color:#666">+</span> addNew;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>console.log(add(<span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>)); <span style="color:#60a0b0;font-style:italic">//10
+</span></span></span></code></pre></div><p><strong>以物件來說明：</strong></p>
+<p>在以下程式碼中，因為 impureAssoc 函式引入 person 物件，又在函式內部做修改，導致 person 這個物件被徹底改變，所以不是純函式。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> impureAssoc <span style="color:#666">=</span> (key, value, object) =&gt; {
+</span></span><span style="display:flex;"><span>  object[key] <span style="color:#666">=</span> value;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> person <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  name<span style="color:#666">:</span> <span style="color:#4070a0">&#34;Lily&#34;</span>,
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>impureAssoc(<span style="color:#4070a0">&#34;shoeSize&#34;</span>, <span style="color:#40a070">400</span>, person);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>console.log({
+</span></span><span style="display:flex;"><span>  person,
+</span></span><span style="display:flex;"><span>  result,
+</span></span><span style="display:flex;"><span>}); <span style="color:#60a0b0;font-style:italic">//{ person: { name: &#34;Lily&#34;, shoeSize: 400 }, result: undefined }
+</span></span></span></code></pre></div><p><strong>我們將第一個例子及第二個例子做修改：</strong></p>
+<p>下方的程式碼，無論您在何處何時調用它。輸入值為 2 跟 4 得出的結果永遠會是 6，沒有其他任何東西會影響輸出，輸出結果只受輸入值影響，並且可以預期結果為何。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> add(a, b) {
+</span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> a <span style="color:#666">+</span> b;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>console.log(add(<span style="color:#40a070">4</span>, <span style="color:#40a070">5</span>)); <span style="color:#60a0b0;font-style:italic">//9
+</span></span></span></code></pre></div><p>以物件來說下方程式碼，pureAssoc 這個函示一樣引入 person 物件，但用了延展運算子來做出一個副本，再對副本做修改，不會對原本傳進來的物件做修改，這樣 pureAssoc()就是純函式了。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> pureAssoc <span style="color:#666">=</span> (key, value, object) =&gt; ({
+</span></span><span style="display:flex;"><span>  ...object,
+</span></span><span style="display:flex;"><span>  [key]<span style="color:#666">:</span> value,
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> person <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  name<span style="color:#666">:</span> <span style="color:#4070a0">&#34;Lily&#34;</span>,
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> result <span style="color:#666">=</span> pureAssoc(<span style="color:#4070a0">&#34;shoeSize&#34;</span>, <span style="color:#40a070">400</span>, person);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>console.log({
+</span></span><span style="display:flex;"><span>  person,
+</span></span><span style="display:flex;"><span>  result,
+</span></span><span style="display:flex;"><span>}); <span style="color:#60a0b0;font-style:italic">//{ person: { name: &#34;Lily&#34; }, result: { name: &#34;Lily&#34;, shoeSize: 400 } }
+</span></span></span></code></pre></div><h5 id="總之純函式的編寫概念為以下幾點">總之純函式的編寫概念為以下幾點：</h5>
+<ol>
+<li>純函式至少接受一個以上的引數</li>
+<li>純函式不修改引數</li>
+<li>純函式回傳一個值，或是另一個函式</li>
+</ol>
+
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "lunas-blog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<script>
+  var indexURL = "https://LunaZhuang.github.io/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://LunaZhuang.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/search/mark.js"></script>
+
+<script src="https://LunaZhuang.github.io/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://LunaZhuang.github.io/js/script.min.js"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+</body>
+</html>
