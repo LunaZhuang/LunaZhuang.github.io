@@ -209,14 +209,18 @@
 <p>一個＠開頭，會存活在每個<strong>獨立</strong>的實體內，在實體內可自由取用的變數</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Lily</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">initialize</span>(<span style="color:#007020">name</span>)
-</span></span><span style="display:flex;"><span>            @name <span style="color:#666">=</span> <span style="color:#007020">name</span>         <span style="color:#60a0b0;font-style:italic">#1.把 name 帶進 @name 實體變數上</span>
+</span></span><span style="display:flex;"><span>           @name <span style="color:#666">=</span> <span style="color:#007020">name</span>         <span style="color:#60a0b0;font-style:italic">#1.把 name 帶進 @name 實體變數上</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">end</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">say</span>
-</span></span><span style="display:flex;"><span>            reture @name
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">name</span>             <span style="color:#60a0b0;font-style:italic">#getter</span>
+</span></span><span style="display:flex;"><span>           reture @name
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">neme</span><span style="color:#666">=</span>(new_name)  <span style="color:#60a0b0;font-style:italic">#setter</span>
+</span></span><span style="display:flex;"><span>          @name <span style="color:#666">=</span> new_name
 </span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">end</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">end</span>
 </span></span><span style="display:flex;"><span>    kitty <span style="color:#666">=</span> <span style="color:#60add5">Lily</span><span style="color:#666">.</span>new(<span style="color:#4070a0">&#34;luna&#34;</span>)  <span style="color:#60a0b0;font-style:italic">#2.在kitty裡會有一個 @name的實體變數</span>
-</span></span><span style="display:flex;"><span>    kitty<span style="color:#666">.</span>say                 <span style="color:#60a0b0;font-style:italic"># 3.呼叫say時會回傳 @name這個變數</span>
+</span></span><span style="display:flex;"><span>    kitty<span style="color:#666">.</span>name                <span style="color:#60a0b0;font-style:italic">#3.呼叫name方法時會回傳 @name這個變數，無法直接像js一樣取用</span>
+</span></span><span style="display:flex;"><span>    kitty<span style="color:#666">.</span>neam<span style="color:#666">=</span>(<span style="color:#4070a0">&#34;lily&#34;</span>)       <span style="color:#60a0b0;font-style:italic"># lily</span>
 </span></span></code></pre></div><p>以上圖為例，我先用 Lily 這個類別製造一個實體名叫 kitty，再用初始化這個方法將 name 帶進@name 變成實體變數，所以我 kitty 這個實體內有個@name 的實體變數，@name 只存活在 Lily 這個類別裡，所以我無法直接呼叫 name，只能透過 say 方法把@name 回傳回來。</p>
 <h6 id="attr_readerattr_writerattr_accessor">attr_reader/attr_writer/attr_accessor</h6>
 <p>在 Ruby 裡沒有屬性，所以取個值變得很麻煩，也因此有了 attr_reader/attr_writer/attr_accessor 來協助，以下為例</p>
@@ -230,7 +234,7 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">end</span>
 </span></span><span style="display:flex;"><span>    kitty <span style="color:#666">=</span> <span style="color:#60add5">Lily</span><span style="color:#666">.</span>new(<span style="color:#4070a0">&#34;luna&#34;</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#007020">puts</span> kitty<span style="color:#666">.</span>neme          <span style="color:#60a0b0;font-style:italic">#在這裡就可以顯示了</span>
-</span></span><span style="display:flex;"><span>    kitty<span style="color:#666">.</span>name <span style="color:#666">=</span> <span style="color:#4070a0">&#34;may&#34;</span>       <span style="color:#60a0b0;font-style:italic">#在這裡可重新設定名字</span>
+</span></span><span style="display:flex;"><span>    kitty<span style="color:#666">.</span>name <span style="color:#666">=</span> <span style="color:#4070a0">&#34;lily&#34;</span>       <span style="color:#60a0b0;font-style:italic">#在這裡可重新設定名字</span>
 </span></span></code></pre></div></li>
 <li>
 <h5 id="類別變數">類別變數</h5>
