@@ -208,7 +208,7 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>heroes<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>name<span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">in</span><span style="color:#bbb"> </span>(<span style="color:#4070a0">&#34;埼玉&#34;</span>,<span style="color:#4070a0">&#34;傑諾斯&#34;</span>)<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>);<span style="color:#bbb">
-</span></span></span></code></pre></div><p>以下為連結(join)的方法運用</p>
+</span></span></span></code></pre></div><p><strong>以下為連結(join)的方法運用</strong></p>
 <ul>
 <li>第一種：</li>
 </ul>
@@ -219,19 +219,25 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">on</span><span style="color:#bbb"> </span>heroes.id<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>monsters.kill_by;<span style="color:#bbb">
 </span></span></span></code></pre></div><p><img src="/images/sql7.png" alt=""></p>
 <p>當然也可以選擇自己想要的欄位：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb">  </span>monsters.name<span style="color:#bbb"> </span>,<span style="color:#bbb">  </span>heroes.name<span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb">  </span>heroes.name<span style="color:#bbb"> </span>,monsters.name<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>heroes<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">INNER</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">JOIN</span><span style="color:#bbb"> </span>monsters<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">on</span><span style="color:#bbb"> </span>heroes.id<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>monsters.kill_by;<span style="color:#bbb">
 </span></span></span></code></pre></div><p><img src="/images/sql8.png" alt=""></p>
 <p>第二種：</p>
 <p>因爲是 LEFT JOIN 會以左邊的資料表為主來顯示全部資料，右邊的資料表如果有比對到就會有資料，沒有就會顯示 NULL:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>monsters.name<span style="color:#bbb"> </span>,<span style="color:#bbb">  </span>heroes.name<span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#666">*</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>heroes<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">LEFT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">JOIN</span><span style="color:#bbb"> </span>monsters<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">on</span><span style="color:#bbb"> </span>heroes.id<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>monsters.kill_by;<span style="color:#bbb">
 </span></span></span></code></pre></div><p><img src="/images/sql9.png" alt=""></p>
-<p>還可以加條件把 heroes 資料表裡，有比對到的資料剔除：</p>
+<p>還可以加條件把 monsters 資料表裡 monsters.kill_by 等於 NULL 刪除，等同於 INNER JOIN 只顯示有比對到的資料：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#666">*</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>heroes<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">LEFT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">JOIN</span><span style="color:#bbb"> </span>monsters<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">on</span><span style="color:#bbb"> </span>heroes.id<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>monsters.kill_by<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>monsters.kill_by<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">NOT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">NULL</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>也可以把 monsters 資料表裡 monsters.kill_by 等於 NULL 的資料留下，意思是 heroes 資料表裡有跟 monsters 比對到的資料都剔除，只剩下沒比對到的資料：</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#666">*</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#bbb"> </span>heroes<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">LEFT</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">JOIN</span><span style="color:#bbb"> </span>monsters<span style="color:#bbb">
